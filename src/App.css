@@ -5,12 +5,32 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.alert-message {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 4px 4px;
+  color: #333;
+  font-size: 0.9rem;
+}
+.alert-message button {
+  float: right;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+}
 .error_messages {
   padding: 0.3rem 0.6rem;
   border-color: #b34;
   background: #c45;
   text-shadow: 0 -1px #9a2a38;
   color: #fff;
+  width: 23rem;
+  font-weight: 600;
+}
+.error_messages li {
+  font-weight: 400;
+  font-size: 1.1rem;
 }
 
 .signup-left-logo img {
@@ -34,6 +54,7 @@
   padding: 0;
   font-size: 1.8rem;
 }
+
 input[type="text"] {
   padding: 0.2rem;
 }
@@ -46,10 +67,12 @@ input[type="text"] {
   font-size: 1.5rem;
   color: #333333;
 }
+
 .bottom-inputs label {
   font-size: 1.15rem;
 }
-.bottom-inputs input[type="email"],
+
+.bottom-inputs input[type="text"],
 .bottom-inputs input[type="password"] {
   padding: 0.2rem;
   font-size: 1.45rem;
@@ -62,6 +85,9 @@ input[type="text"] {
   font-size: 1.4rem;
   padding: 0.6rem 1.1rem;
   opacity: 0.92;
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
 }
 .signup-btn button:hover {
   opacity: 1;
@@ -116,4 +142,13 @@ input[type="text"] {
 }
 .tos_acceptance a:hover {
   text-decoration-line: underline;
+}
+
+@media (max-width: 768px) {
+  .signup-left-logo img {
+    display: none;
+  }
+  .name-input {
+    width: 100%;
+  }
 }
