@@ -79,7 +79,7 @@ class SignupForm extends Component {
       return (
          <>
             {
-               signUpStatus && <h1 className="text-success text-center">Signup successfull...</h1>
+               signUpStatus && <h5 className="text-success text-center">Signup successfull...</h5>
             }
 
             {
@@ -201,9 +201,12 @@ class SignupForm extends Component {
                            <div>
                               <Link to='/'>By signing up, you accept the Splitwise Terms of Service.</Link>
                            </div>
-                           <div>
-                              Don't use USD for currency? <Link to='/'>Click here</Link>
-                           </div>
+                           {
+                              isActive &&
+                              <div>
+                                 Don't use USD for currency? <Link to='/'>Click here</Link>
+                              </div>
+                           }
                         </div>
                      </form>
                   </div>
