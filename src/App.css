@@ -148,7 +148,8 @@ input[type="text"] {
   .signup-left-logo img {
     display: none;
   }
-  .name-input {
+  .name-input,
+  .error_messages {
     width: 100%;
   }
 }
