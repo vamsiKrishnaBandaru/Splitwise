@@ -46,6 +46,7 @@ class SignupForm extends Component {
                {
                   ifFilled: true,
                   signUpStatus: true,
+                  isErrors: false,
                }
             );
             return;
