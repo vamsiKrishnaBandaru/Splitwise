@@ -20,7 +20,6 @@ class SignupForm extends Component {
       }
    }
    resetForm = () => {
-      console.log('resetForm')
       this.setState({
          name: '',
          email: '',
@@ -31,7 +30,6 @@ class SignupForm extends Component {
    handleSubmit = (event) => {
       event.preventDefault();
       if (this.state.isActive) {
-         console.log('handleSubmit')
          const {
             name,
             email,
