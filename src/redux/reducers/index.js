@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import store from '../store';
+import DummyData from './DummyData';
 import userData from './users';
 const rootReducer = combineReducers({
    userData,

@@ -1,4 +1,4 @@
-import { SIGN_IN_USER_DATA } from '../actions/FormData'
+import { SIGN_IN_USER_DATA } from '../actions/DataType'
 
 const initialState = {
    user: {
