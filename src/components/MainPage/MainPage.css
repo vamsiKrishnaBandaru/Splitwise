@@ -30,10 +30,29 @@ h3 {
 .top-btns button,
 .middle-bottom button,
 .tweet,
-.facebook {
+.facebook,
+.nav-sign-up button {
   border-bottom: 2px solid #ddd;
   border-radius: 0.4rem;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.nav-sign-up button {
+  background-color: #5bc5a7;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  color: white;
+  font-size: 1.3rem;
+}
+.Success-login-msg {
+  margin-top: 10rem;
+}
+.Dashboard-btn {
+  background: red;
+}
+.nav-sign-up button:hover {
+  transform: scale(1.02);
 }
 .settle-up button {
   background: #5bc5a7;
@@ -180,7 +199,9 @@ h3 {
 .sec-type i {
   margin-right: 0.3rem;
 }
-
+.Success-login-msg {
+  text-align: center;
+}
 @media (max-width: 800px) {
   .middle-nav {
     flex-direction: column;

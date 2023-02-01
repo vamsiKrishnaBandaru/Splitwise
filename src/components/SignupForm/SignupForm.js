@@ -4,6 +4,8 @@ import validator from 'validator'
 import { Link } from 'react-router-dom'
 import { SIGN_IN_USER_DATA } from '../../redux/actions/FormData'
 import { connect } from 'react-redux';
+import MainPage from '../MainPage/MainPage'
+import SuccessLoginMessage from './SuccessMessage'
 
 class SignupForm extends Component {
    constructor(props) {
@@ -90,7 +92,8 @@ class SignupForm extends Component {
          <>
             {
                this.props.user.isSignIn ?
-                  <h5 className="text-success text-center mt-5">Signup successfull...</h5> :
+                  <SuccessLoginMessage />
+                  :
                   <>
                      {
                         (ifFilled && !signUpStatus)
