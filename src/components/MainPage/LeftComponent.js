@@ -9,7 +9,7 @@ class LeftComponent extends Component {
           <p>Dashboard</p>
         </div>
         <div className='recent-activity'>
-          <i class="fa-solid fa-flag"></i>
+          <i className="fa-solid fa-flag"></i>
           <h6>
             Recent activity
           </h6>
@@ -22,19 +22,22 @@ class LeftComponent extends Component {
           <div className='sec-type'>
             <p>GROUPS</p>
             <div>
-              <i class="fa-solid fa-plus"></i>
+              <i className="fa-solid fa-plus"></i>
               add
             </div>
           </div>
-          <div className='sec-text-area'>
-            <p>You do not have any groups yet. <i class="fa-solid fa-circle-question"></i></p>
-          </div>
+          {
+            /* <div className='sec-text-area'>
+              <p>You do not have any groups yet. <i className="fa-solid fa-circle-question"></i></p>
+            </div> */
+          }
+
         </div>
         <div className='friends'>
           <div className='sec-type'>
             <p>FRIENDS</p>
             <div>
-              <i class="fa-solid fa-plus"></i>
+              <i className="fa-solid fa-plus"></i>
               add
             </div>
           </div>

@@ -202,7 +202,7 @@ h3 {
 .Success-login-msg {
   text-align: center;
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .middle-nav {
     flex-direction: column;
   }

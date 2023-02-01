@@ -4,7 +4,6 @@ import validator from 'validator'
 import { Link } from 'react-router-dom'
 import { SIGN_IN_USER_DATA } from '../../redux/actions/FormData'
 import { connect } from 'react-redux';
-import MainPage from '../MainPage/MainPage'
 import SuccessLoginMessage from './SuccessMessage'
 
 class SignupForm extends Component {

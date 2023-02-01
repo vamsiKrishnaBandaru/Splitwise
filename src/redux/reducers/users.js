@@ -8,7 +8,7 @@ const initialState = {
    }
 }
 
-const storeData = (state = initialState, action) => {
+const userData = (state = initialState, action) => {
    switch (action.type) {
       case SIGN_IN_USER_DATA: return {
          ...state,
@@ -22,4 +22,4 @@ const storeData = (state = initialState, action) => {
 }
 
 
-export default storeData;
+export default userData;
