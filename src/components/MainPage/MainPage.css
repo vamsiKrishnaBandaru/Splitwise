@@ -4,9 +4,11 @@ section {
   border-right: 1px solid #ccc;
   box-shadow: 0 0 12px rgb(0 0 0 / 20%);
 }
-
+.main-box {
+  display: flex;
+}
 .middle-nav {
-  background-color: #eeeeee;
+  background-color: rgba(231, 231, 231, 0.933);
   border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
@@ -29,9 +31,9 @@ h3 {
 .middle-bottom button,
 .tweet,
 .facebook {
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   border-bottom: 2px solid #ddd;
   border-radius: 0.4rem;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 .settle-up button {
   background: #5bc5a7;
@@ -68,8 +70,11 @@ h3 {
   font-size: 1.1rem;
 }
 .middle-bottom i {
-  font-size: 1.3rem;
+  font-size: 1rem;
+}
+.middle-bottom .user {
   margin-right: 0.4rem;
+  margin-left: -0.2rem;
 }
 .right-component h5 {
   color: #999999;
@@ -78,6 +83,9 @@ h3 {
 .right-textContainer {
   background-color: #eeee;
   padding: 1rem;
+}
+.right-textContainer p {
+  color: rgb(84, 83, 83);
 }
 .social {
   display: flex;
@@ -106,15 +114,91 @@ h3 {
 .tweet {
   background: #4099ff;
 }
+
+/* right-component */
+
+.right-contianer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.dashboard {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  align-content: flex-end;
+  gap: 0.3rem;
+  /* border-left: 0.3rem solid #5bc5a7; */
+  margin-bottom: 0;
+}
+
+.dashboard img {
+  width: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+.dashboard p {
+  margin-bottom: 0;
+  color: #5bc5a7;
+  font-weight: 700;
+}
+
+.recent-activity {
+  display: flex;
+  gap: 0.6rem;
+  color: #999;
+}
+.expenses {
+  color: #999;
+}
+.sec-type {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0.8rem;
+  align-items: center;
+  font-size: 0.7rem;
+  background-color: #f6f6f6;
+  border-bottom: 0.01rem solid #ddd;
+}
+
+.sec-type p {
+  padding: 0;
+  margin-bottom: 0;
+  color: #999;
+}
+.sec-text-area {
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgb(177, 177, 177);
+}
+.sec-text-area {
+  margin: 0 3rem;
+}
+.sec-type div {
+  color: #999;
+}
+
+.sec-type i {
+  margin-right: 0.3rem;
+}
+
 @media (max-width: 800px) {
   .middle-nav {
     flex-direction: column;
   }
   .middle-bottom img {
-    width: 5rem;
+    width: 8rem;
   }
   .top-btns button,
   .middle-bottom button {
     font-size: 0.7rem;
+  }
+  .right-component {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .main-box {
+    flex-direction: column;
+    justify-content: center;
   }
 }

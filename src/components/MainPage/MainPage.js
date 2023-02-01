@@ -9,12 +9,12 @@ class MainPage extends Component {
       return (
          <>
             <Header />
-            <div className="container">
+            <div className="container main-box">
                <div className="row">
                   <div className="col">
                      <LeftComponent />
                   </div>
-                  <div className="col-lg-6 col">
+                  <div className="col-lg-6 col-sm">
                      <MiddleComponent />
                   </div>
                   <div className="col">

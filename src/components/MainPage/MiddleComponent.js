@@ -33,7 +33,7 @@ class MiddleComponent extends Component {
                   </p>
                   <div className='signup-btn'>
                      <button type="submit">
-                        <i className="fa fa-plus"></i>
+                        <i className="fa fa-plus"></i> <i className='fa fa-user user'></i>
                         Add friends on Splitwise
                      </button>
                   </div>
