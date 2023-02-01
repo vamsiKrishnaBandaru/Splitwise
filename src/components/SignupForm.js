@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import '../App.css'
 import validator from 'validator'
 import { Link } from 'react-router-dom'
+import AddFormData from '../redux/actions/AddFormData'
+import { connect } from 'react-redux';
 
 class SignupForm extends Component {
    constructor(props) {
@@ -11,10 +13,19 @@ class SignupForm extends Component {
          isErrors: false,
          errors: {},
          isActive: false,
+         formSubmited: false,
          name: '',
          email: '',
          password: '',
       }
+   }
+   resetForm = () => {
+      console.log('resetForm')
+      this.setState({
+         name: '',
+         email: '',
+         password: '',
+      })
    }
 
    handleSubmit = (event) => {
@@ -47,6 +58,14 @@ class SignupForm extends Component {
                   ifFilled: true,
                   signUpStatus: true,
                   isErrors: false,
+               }, () => {
+                  const formData = {
+                     name: this.state.name,
+                     email: this.state.email,
+                     password: this.state.password
+                  }
+                  this.props.AddFormData(formData);
+                  this.resetForm();
                }
             );
             return;
@@ -218,5 +237,12 @@ class SignupForm extends Component {
       )
    }
 }
+const mapDispatchToProps = (dispatch) => {
+   return {
+      AddFormData: (payload) => {
+         return dispatch(AddFormData(payload));
+      }
+   }
+}
 
-export default SignupForm
+export default connect(null, mapDispatchToProps)(SignupForm);

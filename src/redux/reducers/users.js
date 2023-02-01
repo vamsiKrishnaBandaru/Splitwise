@@ -1,10 +1,28 @@
+import { v4 as uuidv4 } from 'uuid'
+
 const initialState = {
-   users: [],
+   user: [],
 };
 
-export default function (state = initialState, action) {
+const storeData = (state = initialState, action) => {
+   console.log(action)
    switch (action.type) {
+      case 'ADD_USER_DATA':
+
+         return {
+            ...state,
+            user: [
+               {
+                  id: uuidv4(),
+                  ...action.payload,
+               },
+               ...state.user
+            ]
+         };
+
       default:
          return state;
    }
 }
+
+export default storeData;
