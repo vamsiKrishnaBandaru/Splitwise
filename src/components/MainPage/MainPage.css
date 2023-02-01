@@ -208,6 +208,11 @@ h3 {
   background: #eeeeee;
   cursor: pointer;
 }
+.intial-sec-content {
+  margin: 0 2.3rem;
+  text-align: center;
+  font-size: 1rem;
+}
 .sec-type div {
   color: #999;
 }
