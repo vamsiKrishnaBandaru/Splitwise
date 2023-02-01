@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SignupForm from './components/SignupForm/SignupForm'
-import MainPage from './components/MainPage/MainPage'
+import Header from './components/Header/Header'
 import {
   BrowserRouter as Router,
   Route,
@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Router>
         <Route path="/">
-          <MainPage />
+          <Header />
         </Route>
         <Route path="/signup" exact>
           <SignupForm />

@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.header {
+  background-color: #5bc5a7;
+  color: white;
+}
+
+.header-content {
+  margin: 0 20rem;
+}
+.header #logo {
+  width: 8rem;
+  height: 1.8rem;
+}
+
+.header-right img {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #3eaf8f;
+  background: #3eaf8f;
+  border-radius: 12px;
+  border: 1px solid red;
+  margin-right: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.dropdown button {
+  outline: none;
+  border: none;
+  color: white;
+  padding: 0;
+}
+@media (max-width: 1200px) {
+  .header-content {
+    margin: 0 8rem;
+  }
+}
+@media (max-width: 560px) {
+  .header {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
