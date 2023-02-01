@@ -1,0 +1,71 @@
+section {
+  min-height: 100vh;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  box-shadow: 0 0 12px rgb(0 0 0 / 20%);
+}
+
+.middle-nav {
+  background-color: #eeeeee;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+h3 {
+  color: #333333;
+  font-weight: 500;
+}
+.top-btns {
+  display: flex;
+  gap: 0.8rem;
+}
+.middle-nav button {
+  font-size: 1rem;
+  padding: 0.5rem 0.9rem;
+}
+.top-btns button,
+.middle-bottom button {
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-bottom: 2px solid #ddd;
+  border-radius: 0.4rem;
+}
+.settle-up button {
+  background: #5bc5a7;
+  text-shadow: 0 -1px 0 #318970;
+}
+.settle-up button:hover {
+  background: #5bc5a7;
+}
+.middle-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.middle-bottom img {
+  width: 9.3rem;
+  margin-left: 1rem;
+}
+.middle-bottom-text {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.middle-bottom h3 {
+  color: #333333;
+  font-weight: 600;
+}
+.middle-bottom p {
+  color: #999;
+  font-size: 1.2rem;
+}
+.middle-bottom button {
+  font-size: 1.1rem;
+}
+.middle-bottom i {
+  font-size: 1.3rem;
+  margin-right: 0.4rem;
+}
