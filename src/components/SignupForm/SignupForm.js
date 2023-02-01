@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import '../App.css'
+import './SignupForm.css'
 import validator from 'validator'
 import { Link } from 'react-router-dom'
-import { SIGN_IN_USER_DATA } from '../redux/actions/FormData'
+import { SIGN_IN_USER_DATA } from '../../redux/actions/FormData'
 import { connect } from 'react-redux';
 
 class SignupForm extends Component {
@@ -204,7 +204,7 @@ class SignupForm extends Component {
                                        <button type="submit">Sign me up!</button>
                                     </div>
                                     <div className='right-btn'>or
-                                       <Link className="btn btn-large btn-signup btn-google" to="/">
+                                       <Link className="btn btn-large btn-signup btn-google" to="/signup">
                                           <img src="https://assets.splitwise.com/assets/fat_rabbit/signup/google-2017-a5b76a1c1eebd99689b571954b1ed40e13338b8a08d6649ffc5ca2ea1bfcb953.png" />
                                           Sign up with Google
                                        </Link>
@@ -212,12 +212,12 @@ class SignupForm extends Component {
                                  </div>
                                  <div className="tos_acceptance">
                                     <div>
-                                       <Link to='/'>By signing up, you accept the Splitwise Terms of Service.</Link>
+                                       <Link to='/signup'>By signing up, you accept the Splitwise Terms of Service.</Link>
                                     </div>
                                     {
                                        isActive &&
                                        <div>
-                                          Don't use USD for currency? <Link to='/'>Click here</Link>
+                                          Don't use USD for currency? <Link to='/signup'>Click here</Link>
                                        </div>
                                     }
                                  </div>

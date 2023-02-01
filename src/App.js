@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import SignupForm from './components/SignupForm'
+import SignupForm from './components/SignupForm/SignupForm'
+import MainPage from './components/MainPage/MainPage'
 import {
   BrowserRouter as Router,
   Route,
@@ -10,7 +11,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Route path="/" exact>
+        <Route path="/">
+          <MainPage />
+        </Route>
+        <Route path="/signup" exact>
           <SignupForm />
         </Route>
       </Router>
