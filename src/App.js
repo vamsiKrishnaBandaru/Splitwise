@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Route path="/">
+        <Route path="/" exact>
           <MainPage />
         </Route>
         <Route path="/signup" exact>
