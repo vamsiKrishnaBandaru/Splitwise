@@ -52,6 +52,7 @@ class SignupForm extends Component {
                   signUpStatus: true,
                   isErrors: false,
                }, () => {
+                  console.log(this.props.user.isSignIn, "props")
                   this.props.AddFormData({
                      name: this.state.name,
                      email: this.state.email,
@@ -90,7 +91,8 @@ class SignupForm extends Component {
       return (
          <>
             {
-               this.props.user.isSignIn ?
+               this.props.user.isSignIn
+                  ?
                   <SuccessLoginMessage />
                   :
                   <>
@@ -236,7 +238,7 @@ class SignupForm extends Component {
 
 const mapStateToProps = (stateInStore) => {
    return {
-      user: stateInStore.user
+      user: stateInStore.userData.user
    }
 }
 

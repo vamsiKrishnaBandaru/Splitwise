@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { GROUP_DATA } from '../../redux/actions/DataType'
 
 class LeftComponent extends Component {
   render() {

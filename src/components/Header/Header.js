@@ -18,7 +18,7 @@ class Header extends Component {
                   <div className="dropdown">
 
                      {
-                        this.props.user.name !== ""
+                        (this.props.user.name !== "")
                            ?
                            <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                               <img src="https://s3.amazonaws.com/splitwise/uploads/user/default_avatars/avatar-ruby38-50px.png" />
@@ -48,7 +48,7 @@ class Header extends Component {
 }
 const mapStateToProps = (stateInStore) => {
    return {
-      user: stateInStore.user
+      user: stateInStore.userData.user
    }
 }
 
