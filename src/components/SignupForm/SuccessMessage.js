@@ -7,7 +7,7 @@ function SuccessLoginMessage() {
                Your sign up was successful !
             </div>
          </div>
-         <Link to="/">
+         <Link to="/mainpage">
             <button type="button" className="btn btn-success mt-4">
                Go to DashBoard <i className="fa-solid fa-arrow-right"></i></button>
          </Link>

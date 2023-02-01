@@ -102,7 +102,25 @@ class LeftComponent extends Component {
                   <p>You have not added any friends yet.</p>
                 </div>
             }
-
+            <div className='invite-box'>
+              <div className='invite-header'>
+                Invite friends
+              </div>
+              <div className="invite-input">
+                <input className="invite-email" type="email" placeholder="Enter an email address" />
+                <button className="btn btn-cancel send-invite">Send invite</button>
+              </div>
+              <div className='social-left'>
+                <div>
+                  <button className='facebook'>
+                    <img src='https://secure.splitwise.com/assets/fat_rabbit/social/facebook.png'></img> Share</button>
+                </div>
+                <div>
+                  <button className='tweet'>
+                    <img src='https://secure.splitwise.com/assets/fat_rabbit/social/twitter.png'></img> Tweet</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
