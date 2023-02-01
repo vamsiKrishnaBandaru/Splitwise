@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import './Header.css'
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { SIGN_IN_USER_DATA } from "../../redux/actions/DataType";
 
 class Header extends Component {
    constructor(props) {
@@ -31,13 +32,19 @@ class Header extends Component {
                               </div>
                            </Link>
                      }
-
                      <ul className="dropdown-menu">
                         <li><Link className="dropdown-item" to="/"> Your account</Link></li>
                         <li><Link className="dropdown-item" to="/"> Create a group</Link></li>
                         <li><Link className="dropdown-item" to="/"> Fairness calculators</Link></li>
                         <li><Link className="dropdown-item" to="/"> Contact support</Link></li>
-                        <li><Link className="dropdown-item" to="/"> Log out</Link></li>
+                        <li><Link className="dropdown-item" to="/signup" onClick={() => {
+                           this.props.ChangeFormData({
+                              name: "",
+                              email: "",
+                              isSignIn: false,
+                           });
+                        }}>
+                           Log out</Link></li>
                      </ul>
                   </div>
                </div>
@@ -52,4 +59,12 @@ const mapStateToProps = (stateInStore) => {
    }
 }
 
-export default connect(mapStateToProps, null)(Header);
+const mapDispatchToProps = {
+   ChangeFormData: (payload) => {
+      return {
+         type: SIGN_IN_USER_DATA,
+         payload,
+      }
+   }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -52,7 +52,6 @@ class SignupForm extends Component {
                   signUpStatus: true,
                   isErrors: false,
                }, () => {
-                  console.log(this.props.user.isSignIn, "props")
                   this.props.AddFormData({
                      name: this.state.name,
                      email: this.state.email,

@@ -66,7 +66,6 @@ const initialState = {
 }
 
 const DummyData = (state = initialState, action) => {
-   console.log('groupdata:', action)
    switch (action.type) {
       case GROUP_DATA:
          return {

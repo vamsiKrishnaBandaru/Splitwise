@@ -92,7 +92,6 @@ class LeftComponent extends Component {
               this.props.user.isSignIn ?
 
                 this.state.friends.map((friend) => {
-                  console.log('friend')
                   return (
                     <li key={friend}>
                       <h6><i className="fa fa-user"></i>{friend}</h6>
