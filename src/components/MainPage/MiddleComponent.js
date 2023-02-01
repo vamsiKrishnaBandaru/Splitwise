@@ -34,10 +34,8 @@ class MiddleComponent extends Component {
                   <div className='signup-btn'>
                      <button type="submit">
                         <i className="fa fa-plus"></i>
-                        
                         Add friends on Splitwise
-                        </button>
-                        
+                     </button>
                   </div>
                </div>
             </div>

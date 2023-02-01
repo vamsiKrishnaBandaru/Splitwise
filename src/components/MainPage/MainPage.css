@@ -26,7 +26,9 @@ h3 {
   padding: 0.5rem 0.9rem;
 }
 .top-btns button,
-.middle-bottom button {
+.middle-bottom button,
+.tweet,
+.facebook {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   border-bottom: 2px solid #ddd;
   border-radius: 0.4rem;
@@ -68,4 +70,51 @@ h3 {
 .middle-bottom i {
   font-size: 1.3rem;
   margin-right: 0.4rem;
+}
+.right-component h5 {
+  color: #999999;
+  font-size: 1.3rem;
+}
+.right-textContainer {
+  background-color: #eeee;
+  padding: 1rem;
+}
+.social {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.3rem;
+  color: #fff;
+  text-shadow: none;
+  opacity: 0.9;
+  height: auto;
+  margin: 0;
+  padding: 2px 10px 2px 3px;
+  font-size: 14px;
+  border-left: none;
+  margin-top: 10px;
+}
+.facebook,
+.tweet {
+  background: #3b5998;
+  color: white;
+  width: 8rem;
+  border-radius: 0.3rem;
+  outline: none;
+  border: none;
+}
+.tweet {
+  background: #4099ff;
+}
+@media (max-width: 800px) {
+  .middle-nav {
+    flex-direction: column;
+  }
+  .middle-bottom img {
+    width: 5rem;
+  }
+  .top-btns button,
+  .middle-bottom button {
+    font-size: 0.7rem;
+  }
 }
