@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './SignupForm.css'
 import validator from 'validator'
 import { Link } from 'react-router-dom'
-import { SIGN_IN_USER_DATA } from '../../redux/actions/FormData'
+import { SIGN_IN_USER_DATA } from '../../redux/actions/DataType'
 import { connect } from 'react-redux';
 import SuccessLoginMessage from './SuccessMessage'
 
