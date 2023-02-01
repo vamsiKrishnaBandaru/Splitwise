@@ -62,7 +62,6 @@ class SignupForm extends Component {
                   const formData = {
                      name: this.state.name,
                      email: this.state.email,
-                     password: this.state.password
                   }
                   this.props.AddFormData(formData);
                   this.resetForm();
