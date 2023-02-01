@@ -1,0 +1,1 @@
+export const SIGN_IN_USER_DATA = 'SIGN_IN_USER_DATA'
