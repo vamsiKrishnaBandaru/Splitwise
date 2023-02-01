@@ -4,6 +4,9 @@ section {
   border-right: 1px solid #ccc;
   box-shadow: 0 0 12px rgb(0 0 0 / 20%);
 }
+li {
+  list-style: none;
+}
 .main-box {
   display: flex;
 }
@@ -190,7 +193,20 @@ h3 {
   color: rgb(177, 177, 177);
 }
 .sec-text-area {
-  margin: 0 3rem;
+  text-align: left;
+}
+.sec-text-area h6 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.28rem;
+}
+.sec-text-area i {
+  margin: 0 0.3rem;
+  font-size: 0.8rem;
+}
+.sec-text-area li:hover {
+  background: #eeeeee;
+  cursor: pointer;
 }
 .sec-type div {
   color: #999;
