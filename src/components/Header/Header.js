@@ -28,7 +28,7 @@ class Header extends Component {
                         <li><Link className="dropdown-item" to="/mainpage"> Create a group</Link></li>
                         <li><Link className="dropdown-item" to="/mainpage"> Fairness calculators</Link></li>
                         <li><Link className="dropdown-item" to="/mainpage"> Contact support</Link></li>
-                        <li><Link className="dropdown-item" to="/signup" onClick={() => {
+                        <li><Link className="dropdown-item" to="/" onClick={() => {
                            this.props.ChangeFormData({
                               name: "",
                               email: "",
