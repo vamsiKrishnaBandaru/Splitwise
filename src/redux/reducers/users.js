@@ -21,4 +21,5 @@ const storeData = (state = initialState, action) => {
    }
 }
 
+
 export default storeData;
