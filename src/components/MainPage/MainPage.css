@@ -51,9 +51,6 @@ h3 {
 .Success-login-msg {
   margin-top: 10rem;
 }
-.Dashboard-btn {
-  background: red;
-}
 .nav-sign-up button:hover {
   transform: scale(1.02);
 }
@@ -163,7 +160,19 @@ h3 {
   color: #5bc5a7;
   font-weight: 700;
 }
-
+.table-bordered {
+  color: #212525;
+  background-color: rgba(231, 231, 231, 0.933);
+  border: 2px solid #ddd;
+  text-align: center;
+  color: rgb(75, 75, 75);
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+.table-bordered .price {
+  color: #4ec2a1;
+  margin-bottom: 0;
+}
 .recent-activity {
   display: flex;
   gap: 0.6rem;

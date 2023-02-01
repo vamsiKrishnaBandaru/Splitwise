@@ -18,6 +18,32 @@ class MiddleComponent extends Component {
                   </div>
                </div>
             </div>
+            {
+               <table className="table table-bordered">
+                  <tbody>
+                     <tr>
+                        <td scope="col">
+                           <div className="flex-grow-1">
+                              <p className="mb-1 font-weight-light">total balance</p>
+                              <p className="font-weight-light price">$450</p>
+                           </div>
+                        </td>
+                        <td scope="col">
+                           <div className="flex-grow-1">
+                              <p className="mb-1 font-weight-light">you owe</p>
+                              <p className="font-weight-light price">$250</p>
+                           </div>
+                        </td>
+                        <td scope="col">
+                           <div className="flex-grow-1">
+                              <p className="mb-1 font-weight-light">you are owed</p>
+                              <p className="font-weight-light price">$700</p>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            }
 
             <div className='row middle-bottom p-4'>
                <img src='https://assets.splitwise.com/assets/fat_rabbit/person-2d59b69b3e7431884ebec1a55de75a4153a17c4050e6b50051ca90412e72cf96.png'></img>
@@ -39,7 +65,7 @@ class MiddleComponent extends Component {
                   </div>
                </div>
             </div>
-         </section>
+         </section >
       )
    }
 }
