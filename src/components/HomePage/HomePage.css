@@ -1,0 +1,131 @@
+.text-green {
+  color: #1cc29f;
+}
+.heading {
+  font-weight: 800;
+}
+.Home-pg-icons {
+  display: flex;
+  gap: 2rem;
+}
+.Home-pg-icons i {
+  font-size: 3rem;
+}
+.fa-plane {
+  color: rgb(144, 211, 196);
+}
+.fa-house-chimney {
+  color: rgb(182, 154, 223);
+}
+.fa-heart {
+  color: rgb(202, 102, 131);
+}
+
+.fa-star-of-life {
+  color: rgb(92, 96, 101);
+}
+.description {
+  font-size: 1.4rem;
+}
+.background {
+  background: url(https://assets.splitwise.com/assets/core/facets.png);
+  background-size: 100%;
+  background-repeat: repeat;
+}
+.home-row1 {
+  display: flex;
+  padding: 3rem;
+  gap: 10rem;
+}
+.home-info {
+  margin: 0 4rem;
+}
+.large-palne i {
+  font-size: 30rem;
+  color: black;
+}
+.large-palne {
+  align-self: center;
+}
+.cards-container .row {
+  --bs-gutter-x: 0rem;
+}
+.card {
+  --bs-card-border-radius: none;
+}
+.box {
+  color: white;
+}
+.box strong {
+  font-size: 1.5rem;
+}
+.box p,
+.para {
+  font-size: 1.1rem;
+  padding: 0 10rem;
+}
+.box-bg {
+  background: url("https://assets.splitwise.com/assets/core/facets.png");
+  background-size: 100%;
+  background-repeat: repeat;
+}
+.fill-green {
+  background-color: #1cc29f;
+}
+.fill-orange {
+  background-color: #ed7041;
+}
+.fill-grey {
+  background-color: #373b3f;
+}
+
+.fill-purple {
+  background-color: #8656cd;
+}
+
+.bottom-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-box button {
+  outline: none;
+  border: none;
+  background: inherit;
+  color: white;
+  padding: 0.3rem 0.6rem;
+}
+.bottom-box .btn {
+  box-shadow: 0 2px 0 0 rgb(55 59 63 / 50%);
+  border: 1px solid white;
+}
+
+@media (max-width: 1250px) {
+  .large-palne i {
+    font-size: 15rem;
+  }
+}
+@media (max-width: 900px) {
+  .home-info {
+    margin: 0;
+    text-align: center;
+    padding: 0;
+  }
+  .Home-pg-icons i {
+    font-size: 2rem;
+  }
+  .box p,
+  .para {
+    padding: 0 0;
+  }
+  .bottom-box {
+    flex-direction: column;
+  }
+}
+@media (max-width: 410px) {
+  .box img,
+  .bottom-box img {
+    width: 16rem;
+  }
+}

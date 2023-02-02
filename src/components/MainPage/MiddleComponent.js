@@ -4,7 +4,7 @@ import './MainPage.css'
 class MiddleComponent extends Component {
    render() {
       return (
-         <section>
+         <section className='middle-component-container'>
             <div className="middle-nav">
                <h3>
                   DashBoard
