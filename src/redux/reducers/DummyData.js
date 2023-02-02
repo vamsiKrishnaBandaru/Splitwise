@@ -26,9 +26,9 @@ const initialState = {
             "Jhon",
             "Smith",
             "Rahul"
-         ]
-         ,
-         totalAmount: 20000
+         ],
+         totalAmount: 20000,
+         messages: "okay"
       },
       {
          groupName: 'Vinodh Birthday Party',
@@ -38,8 +38,7 @@ const initialState = {
             "Smith",
             "Bob",
             "Vinodh",
-         ]
-         ,
+         ],
          totalAmount: 500
       },
       {
@@ -47,8 +46,7 @@ const initialState = {
          friends: [
             "Jhon",
             "Bob",
-         ]
-         ,
+         ],
          totalAmount: 500
       },
       {
@@ -57,8 +55,7 @@ const initialState = {
             "Pavan",
             "Bob",
             "Jhon",
-         ]
-         ,
+         ],
          totalAmount: 2000
       },
    ]
