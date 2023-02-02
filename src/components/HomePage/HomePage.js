@@ -16,7 +16,7 @@ const HomePage = () => {
 
             <div>
                <button type="button" className="btn btn-light btn-primary-light mx-2">Log in</button>
-               <Link to="/signup" className='p-1'>
+               <Link to="/signup" className='home-signup-btn'>
                   <button type="button" className="btn btn-success btn-primary-dark mx-2">Sign up</button>
                </Link>
             </div>
@@ -38,8 +38,10 @@ const HomePage = () => {
                   <p className='description'>
                      Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family.
                   </p>
-                  <button type="button" className="btn btn-success btn-primary-dark mb-4 btn-lg">Sign up</button>
-                  <p className="">
+                  <Link to="/signup" className='home-signup-btn'>
+                     <button type="button" className="btn btn-success btn-primary-dark mb-4 btn-lg">Sign up</button>
+                  </Link>
+                  <p>
                      Free for <i className="fa-brands fa-apple"></i> iphone, <i className="fa-brands fa-android"> </i> Android and web.
                   </p>
                </div>
@@ -48,6 +50,7 @@ const HomePage = () => {
                <i className="fa-solid fa-plane d-none d-lg-block"></i>
             </div>
          </section>
+
          <section className='cards-container'>
             <div className="row">
                <div className="col box">

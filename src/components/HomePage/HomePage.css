@@ -37,6 +37,13 @@
   padding: 3rem;
   gap: 10rem;
 }
+.home-signup-btn button {
+  background-color: #1cc29f;
+  color: white;
+}
+button:hover {
+  transform: scale(1.02);
+}
 .home-info {
   margin: 0 4rem;
 }
