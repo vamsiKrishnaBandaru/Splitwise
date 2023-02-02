@@ -11,6 +11,7 @@ class GroupActiveState extends Component {
          members: null,
       }
    }
+
    updateData = (activeGroup) => {
       let result = this.props.groups.filter(group => {
          if (group.groupName === activeGroup) {
@@ -25,9 +26,11 @@ class GroupActiveState extends Component {
          })
       }
    }
+
    componentDidMount() {
       this.updateData(this.props.user.activeGroup)
    }
+
    componentDidUpdate(prevProps) {
       if (prevProps.user.activeGroup != this.props.user.activeGroup) {
          this.updateData(this.props.user.activeGroup)
@@ -48,6 +51,7 @@ class GroupActiveState extends Component {
                         this.state.howSpent.map(data => {
                            return (
                               <li key={data.message} className="list-group-item message-container">
+
                                  <div className='row message-date'>
                                     <div className='col-2'>
                                        <p>FEB</p>
@@ -57,6 +61,7 @@ class GroupActiveState extends Component {
                                        <h6>{data.message}</h6>
                                     </div>
                                  </div>
+
                                  <div className='spent-status'>
                                     <div>
                                        <p>You Paid</p>
@@ -70,6 +75,7 @@ class GroupActiveState extends Component {
                                           }`}</strong>
                                     </div>
                                  </div>
+
                               </li>
                            )
                         })

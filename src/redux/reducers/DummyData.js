@@ -118,6 +118,7 @@ const initialState = {
             }
          ]
       },
+      
       {
          groupName: 'Avatar Movie',
          friends: [
@@ -139,6 +140,7 @@ const initialState = {
       },
    ]
 }
+
 
 const DummyData = (state = initialState, action) => {
    switch (action.type) {

@@ -23,9 +23,11 @@ class MiddleComponent extends Component {
          totalAmount
       })
    }
+
    render() {
       return (
          <section className='middle-component-container'>
+
             <div className="middle-nav">
                <h3>
                   DashBoard
@@ -113,7 +115,6 @@ const mapStateToProps = (stateInStore) => {
    }
 }
 
-
 const mapDispatchToProps = {
    AddFormData: (payload) => {
       return {
@@ -122,6 +123,5 @@ const mapDispatchToProps = {
       }
    }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(MiddleComponent);

@@ -15,21 +15,24 @@ class FriendActiveSatate extends Component {
             return group
          }
       })
-      console.log(result)
+
       if (result.length > 0) {
          this.setState({
             mutualGroups: result
          })
       }
    }
+
    componentDidMount() {
       this.updateData(this.props.user.activeFriend)
    }
+
    componentDidUpdate(prevProps) {
       if (prevProps.user.activeFriend != this.props.user.activeFriend) {
          this.updateData(this.props.user.activeFriend)
       }
    }
+
    render() {
       return (
          <>
@@ -42,6 +45,7 @@ class FriendActiveSatate extends Component {
                         this.state.mutualGroups.map((group) => {
                            return (
                               <li key={group.groupName} className="list-group-item message-container mt-1">
+
                                  <div className='message-date group-name-date'>
                                     <div>
                                        <p>FEB</p>
@@ -53,6 +57,7 @@ class FriendActiveSatate extends Component {
                                        <h6>{group.groupName}</h6>
                                     </div>
                                  </div>
+
                                  <div className='spent-status'>
                                     <div className='lent'>
                                        <p>{this.props.user.name} owes you</p>
@@ -70,6 +75,7 @@ class FriendActiveSatate extends Component {
       )
    }
 }
+
 const mapStateToProps = (stateInStore) => {
    return {
       groups: stateInStore.DummyData.groups,

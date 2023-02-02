@@ -36,15 +36,19 @@ class SignupForm extends Component {
          if (name === "") {
             errors.name = "First name can't be blank"
          }
+
          if (!validator.isEmail(email)) {
             errors.email = 'Please enter a valid email address.'
          }
+
          if (password.length < 8) {
             errors.password = 'Password is too short (minimum is 8 characters)'
          }
+
          if (!validator.isStrongPassword(password)) {
             errors.password1 = `Password is too common (e.g. '12345','password',etc) - please choose something more complex or unique`
          }
+
          if (Object.keys(errors).length === 0) {
             this.setState(
                {
@@ -87,6 +91,7 @@ class SignupForm extends Component {
          errors,
          signUpStatus
       } = this.state;
+
       return (
          <>
             {
@@ -213,16 +218,19 @@ class SignupForm extends Component {
                                        </Link>
                                     </div>
                                  </div>
+
                                  <div className="tos_acceptance">
                                     <div>
                                        <Link to='/signup'>By signing up, you accept the Splitwise Terms of Service.</Link>
                                     </div>
+
                                     {
                                        isActive &&
                                        <div>
                                           Don't use USD for currency? <Link to='/signup'>Click here</Link>
                                        </div>
                                     }
+
                                  </div>
                               </form>
                            </div>

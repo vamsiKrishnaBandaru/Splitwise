@@ -40,7 +40,9 @@ class LeftComponent extends Component {
       }, []);
       return unique;
     }
+
     const friends = removeDuplicates(Allfriends)
+
     this.setState({
       friends
     })
@@ -145,6 +147,7 @@ class LeftComponent extends Component {
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
       </div>

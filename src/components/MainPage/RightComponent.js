@@ -14,11 +14,13 @@ class RightComponent extends Component {
   }
 
   updateData = (activeGroup) => {
+
     let result = this.props.groups.filter(group => {
       if (group.groupName === activeGroup) {
         return group
       }
     })
+
     if (result.length > 0) {
       this.setState({
         members: result[0].friends,
@@ -48,8 +50,10 @@ class RightComponent extends Component {
             {
               this.state.members !== null &&
               this.state.members.map((member, index) => {
+                
                 let oweAmount = (this.state.totalAmount / (this.state.members.length)).toFixed(2)
                 let link = `https://s3.amazonaws.com/splitwise/uploads/user/default_avatars/avatar-grey${index + 1}-100px.png`
+                
                 return (
                   <li className='right-part-member' key={member}>
                     <div className='image'>
@@ -68,6 +72,7 @@ class RightComponent extends Component {
                 })
               })
             }
+
             <li className='right-part-member'>
               <div className='image'>
                 <img className="rounded-circle" src="https://s3.amazonaws.com/splitwise/uploads/user/default_avatars/avatar-ruby38-50px.png" />
@@ -102,6 +107,7 @@ class RightComponent extends Component {
     )
   }
 }
+
 const mapStateToProps = (stateInStore) => {
   return {
     groups: stateInStore.DummyData.groups,
