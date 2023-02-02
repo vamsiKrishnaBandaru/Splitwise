@@ -281,6 +281,20 @@ h3 {
 .Success-login-msg {
   text-align: center;
 }
+.right-title {
+  color: rgb(134, 134, 134);
+}
+.right-part-member {
+  display: flex;
+  gap: 1rem;
+  padding: 0.6rem 0.6rem;
+}
+.member-data p {
+  margin-bottom: 0;
+}
+.right-part-member img {
+  width: 3rem;
+}
 @media (max-width: 900px) {
   .middle-nav {
     flex-direction: column;

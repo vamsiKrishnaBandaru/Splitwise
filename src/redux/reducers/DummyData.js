@@ -5,9 +5,9 @@ const initialState = {
       {
          groupName: 'Bangalore Trip',
          friends: [
-            "Bob",
             "Jhon",
-            "Smith"
+            "Smith",
+            "Bob",
          ],
          totalAmount: 25000
       },
@@ -33,12 +33,11 @@ const initialState = {
       {
          groupName: 'Vinodh Birthday Party',
          friends: [
-            "Bob",
             "Jhon",
-            "Smith",
             "Pavan",
+            "Smith",
+            "Bob",
             "Vinodh",
-            "Veeru"
          ]
          ,
          totalAmount: 500
@@ -46,8 +45,8 @@ const initialState = {
       {
          groupName: 'Room expenses',
          friends: [
-            "Bob",
             "Jhon",
+            "Bob",
          ]
          ,
          totalAmount: 500
@@ -55,9 +54,9 @@ const initialState = {
       {
          groupName: 'Avatar Movie',
          friends: [
+            "Pavan",
             "Bob",
             "Jhon",
-            "Pavan"
          ]
          ,
          totalAmount: 2000

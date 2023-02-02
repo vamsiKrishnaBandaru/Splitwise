@@ -5,6 +5,7 @@ const initialState = {
       name: '',
       email: '',
       isSignIn: false,
+      currentPosition: null,
    }
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { GROUP_DATA } from '../../redux/actions/DataType'
+import { GROUP_DATA, SIGN_IN_USER_DATA } from '../../redux/actions/DataType'
 import { connect } from 'react-redux';
 
 class LeftComponent extends Component {
@@ -9,14 +9,21 @@ class LeftComponent extends Component {
       friends: []
     }
   }
+
+  HandelClick = (status) => {
+    this.props.AddFormData({
+      currentPosition: status
+    })
+  }
+
   componentDidMount() {
     let Allfriends = this.props.groups.reduce((acc, group) => {
       return acc.concat(group.friends)
     }, [])
 
-    const removeDuplicates = (arr) => {
+    const removeDuplicates = (array) => {
 
-      let unique = arr.reduce(function (acc, curr) {
+      let unique = array.reduce((acc, curr) => {
 
         if (!acc.includes(curr)) {
           acc.push(curr);
@@ -30,6 +37,7 @@ class LeftComponent extends Component {
       friends
     })
   }
+
   render() {
 
     return (
@@ -63,17 +71,21 @@ class LeftComponent extends Component {
 
           <div className='sec-text-area'>
             {
-              this.props.user.isSignIn ?
-                this.props.groups.map((group) => {
-                  return (
-                    <li key={group.groupName}>
-                      <h6><i className="fa-solid fa-tag"></i>{group.groupName}</h6>
-                    </li>
-                  )
-                }) :
-                <div className='intial-sec-content'>
-                  <p>You do not have any groups yet. <i className="fa-solid fa-circle-question"></i></p>
-                </div>
+              // this.props.user.isSignIn ?
+              this.props.groups.map((group) => {
+                return (
+                  <li key={group.groupName}>
+                    <h6 onClick={() => {
+                      this.HandelClick(group.groupName)
+                    }}>
+                      <i className="fa-solid fa-tag"></i>{group.groupName}</h6>
+                  </li>
+                )
+              })
+              // :
+              // <div className='intial-sec-content'>
+              //   <p>You do not have any groups yet. <i className="fa-solid fa-circle-question"></i></p>
+              // </div>
             }
           </div>
         </div>
@@ -89,18 +101,19 @@ class LeftComponent extends Component {
 
           <div className='sec-text-area'>
             {
-              this.props.user.isSignIn ?
+              // this.props.user.isSignIn ?
 
-                this.state.friends.map((friend) => {
-                  return (
-                    <li key={friend}>
-                      <h6><i className="fa fa-user"></i>{friend}</h6>
-                    </li>
-                  )
-                }) :
-                <div className='intial-sec-content'>
-                  <p>You have not added any friends yet.</p>
-                </div>
+              this.state.friends.map((friend) => {
+                return (
+                  <li key={friend} onClick={() => { this.HandelClick(friend) }}>
+                    <h6><i className="fa fa-user"></i>{friend}</h6>
+                  </li>
+                )
+              })
+              //  :
+              // <div className='intial-sec-content'>
+              //   <p>You have not added any friends yet.</p>
+              // </div>
             }
             <div className='invite-box'>
               <div className='invite-header'>
@@ -138,7 +151,7 @@ const mapStateToProps = (stateInStore) => {
 const mapDispatchToProps = {
   AddFormData: (payload) => {
     return {
-      type: GROUP_DATA,
+      type: SIGN_IN_USER_DATA,
       payload,
     }
   }
