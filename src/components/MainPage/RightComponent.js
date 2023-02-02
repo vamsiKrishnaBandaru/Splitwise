@@ -26,12 +26,11 @@ class RightComponent extends Component {
       })
     }
   }
-  componentDidMount() {
-    // console.log(this.props.user.currentPosition, 'right component')
-    this.updateData(this.props.user.currentPosition)
 
-    // console.log(totalAmount)
+  componentDidMount() {
+    this.updateData(this.props.user.currentPosition)
   }
+
   componentDidUpdate(prevProps) {
     if (prevProps.user.currentPosition != this.props.user.currentPosition) {
       this.updateData(this.props.user.currentPosition)
@@ -76,7 +75,8 @@ class RightComponent extends Component {
               <div className='member-data'>
                 <p>{this.props.user.name}</p>
                 <div className='text-success'>
-                  <span>gets back</span><span>{` $${(this.state.totalAmount - this.state.totalAmount / (this.state.members.length)).toFixed(2)}`}</span></div>
+                  gets back{` $${(this.state.totalAmount - this.state.totalAmount / (this.state.members.length + 1)).toFixed(2)}`}
+                </div>
               </div>
             </li>
           </ul>

@@ -147,7 +147,6 @@ h3 {
   align-items: flex-end;
   align-content: flex-end;
   gap: 0.3rem;
-  /* border-left: 0.3rem solid #5bc5a7; */
   margin-bottom: 0;
 }
 
@@ -190,7 +189,39 @@ h3 {
   background-color: #f6f6f6;
   border-bottom: 0.01rem solid #ddd;
 }
-
+.message-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 4rem;
+}
+.message-date p {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #999999;
+}
+.message-date h6 {
+  align-self: center;
+  font-weight: 500;
+  font-size: 1.06rem;
+}
+.spent-status p {
+  color: #878787;
+}
+.spent-status {
+  display: flex;
+  gap: 1rem;
+  letter-spacing: 0.03rem;
+}
+.lent strong {
+  color: #5bc5a7;
+}
+.message-container p {
+  margin-bottom: 0;
+}
 .sec-type p {
   padding: 0;
   margin-bottom: 0;
@@ -217,6 +248,7 @@ h3 {
   background: #eeeeee;
   cursor: pointer;
 }
+
 .intial-sec-content {
   margin: 0 2.3rem;
   text-align: center;

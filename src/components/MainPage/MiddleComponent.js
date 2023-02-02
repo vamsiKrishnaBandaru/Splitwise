@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './MainPage.css'
 import { GROUP_DATA, SIGN_IN_USER_DATA } from '../../redux/actions/DataType'
 import { connect } from 'react-redux';
+import GroupActiveState from './GroupActiveState';
 
 
 class MiddleComponent extends Component {
@@ -11,6 +12,7 @@ class MiddleComponent extends Component {
          totalAmount: null
       }
    }
+
    componentDidMount() {
       let totalAmount = this.props.groups.reduce((acc, group) => {
          acc += group.totalAmount
@@ -36,6 +38,7 @@ class MiddleComponent extends Component {
                   </div>
                </div>
             </div>
+
             {
                <table className="table table-bordered">
                   <tbody>
@@ -43,7 +46,9 @@ class MiddleComponent extends Component {
                         <td scope="col">
                            <div className="flex-grow-1">
                               <p className="mb-1 font-weight-light">total balance</p>
-                              <p className="font-weight-light price">{`$ ${this.state.totalAmount}`}</p>
+                              <p className="font-weight-light price">{
+                                 `$ ${this.state.totalAmount}`
+                              }</p>
                            </div>
                         </td>
                         <td scope="col">
@@ -55,7 +60,7 @@ class MiddleComponent extends Component {
                         <td scope="col">
                            <div className="flex-grow-1">
                               <p className="mb-1 font-weight-light">you are owed</p>
-                              <p className="font-weight-light price">$7000</p>
+                              <p className="font-weight-light price">$2560</p>
                            </div>
                         </td>
                      </tr>
@@ -63,34 +68,38 @@ class MiddleComponent extends Component {
                </table>
             }
 
-            <div className='row middle-bottom p-4'>
-               <img src='https://assets.splitwise.com/assets/fat_rabbit/person-2d59b69b3e7431884ebec1a55de75a4153a17c4050e6b50051ca90412e72cf96.png'></img>
-               <div className='col middle-bottom-text'>
-                  <h3>
-                     Welcome to Splitwise!
-                  </h3>
-                  <p>
-                     Splitwise helps you split bills with friends.
-                  </p>
-                  <p>
-                     Click “Add an expense” above to get started, or invite some friends first!
-                  </p>
-                  <div className='signup-btn'>
-                     <button type="submit">
-                        <i className="fa fa-plus"></i> <i className='fa fa-user user'></i>
-                        Add friends on Splitwise
-                     </button>
+            {
+               !this.props.user.currentPosition
+                  ?
+                  <div className='row middle-bottom p-4'>
+                     <img src='https://assets.splitwise.com/assets/fat_rabbit/person-2d59b69b3e7431884ebec1a55de75a4153a17c4050e6b50051ca90412e72cf96.png'></img>
+                     <div className='col middle-bottom-text'>
+                        <h3>
+                           Welcome to Splitwise!
+                        </h3>
+                        <p>
+                           Splitwise helps you split bills with friends.
+                        </p>
+                        <p>
+                           Click “Add an expense” above to get started, or invite some friends first!
+                        </p>
+                        <div className='signup-btn'>
+                           <button type="submit">
+                              <i className="fa fa-plus"></i> <i className='fa fa-user user'></i>
+                              Add friends on Splitwise
+                           </button>
+                        </div>
+                     </div>
                   </div>
-               </div>
-            </div>
+                  :
+                  <GroupActiveState />
+            }
          </section >
       )
    }
 }
 
 const mapStateToProps = (stateInStore) => {
-   // console.log(stateInStore.userData.user)
-   // console.log(stateInStore.DummyData.groups)
    return {
       groups: stateInStore.DummyData.groups,
       user: stateInStore.userData.user

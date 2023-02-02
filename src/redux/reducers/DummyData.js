@@ -9,16 +9,48 @@ const initialState = {
             "Smith",
             "Bob",
          ],
-         totalAmount: 25000
+         totalAmount: 25000,
+         howSpent: [
+            {
+               message: 'At petrol bunk',
+               cost: 5200
+            },
+            {
+               message: 'Food',
+               cost: 3500
+            },
+            {
+               message: 'Drinks',
+               cost: 6500
+            }, {
+               message: 'Hotel',
+               cost: 9800
+            }
+         ]
       },
+
       {
          groupName: 'Saturday Night',
          friends: [
             "Bob",
             "Smith"
          ],
-         totalAmount: 6500
+         totalAmount: 6500,
+         howSpent: [
+            {
+               message: 'For Drinks',
+               cost: 8500
+            },
+            {
+               message: 'For Food',
+               cost: 3500
+            }, {
+               message: 'Hotel',
+               cost: 9800
+            }
+         ]
       },
+
       {
          groupName: 'New Year Party',
          friends: [
@@ -28,7 +60,20 @@ const initialState = {
             "Rahul"
          ],
          totalAmount: 20000,
-         messages: "okay"
+         howSpent: [
+            {
+               message: 'Driks',
+               cost: 14200
+            },
+            {
+               message: 'Food',
+               cost: 5000
+            },
+            {
+               message: 'For Cake',
+               cost: 800
+            }
+         ]
       },
       {
          groupName: 'Vinodh Birthday Party',
@@ -39,7 +84,21 @@ const initialState = {
             "Bob",
             "Vinodh",
          ],
-         totalAmount: 500
+         totalAmount: 26700,
+         howSpent: [
+            {
+               message: 'Decoration',
+               cost: 5200
+            },
+            {
+               message: 'For Cake',
+               cost: 1500
+            },
+            {
+               message: 'Drinks',
+               cost: 20000
+            }
+         ]
       },
       {
          groupName: 'Room expenses',
@@ -47,7 +106,17 @@ const initialState = {
             "Jhon",
             "Bob",
          ],
-         totalAmount: 500
+         totalAmount: 320,
+         howSpent: [
+            {
+               message: 'vegetables',
+               cost: 300
+            },
+            {
+               message: 'Water Tin',
+               cost: 20
+            }
+         ]
       },
       {
          groupName: 'Avatar Movie',
@@ -56,7 +125,17 @@ const initialState = {
             "Bob",
             "Jhon",
          ],
-         totalAmount: 2000
+         totalAmount: 6700,
+         howSpent: [
+            {
+               message: 'Tickets',
+               cost: 5200
+            },
+            {
+               message: 'Food',
+               cost: 1500
+            }
+         ]
       },
    ]
 }

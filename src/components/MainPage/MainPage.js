@@ -14,7 +14,7 @@ class MainPage extends Component {
                   <div className="col">
                      <LeftComponent />
                   </div>
-                  <div className="col-lg-6 col-sm-12">
+                  <div className="col-lg-7 col-sm-12">
                      <MiddleComponent />
                   </div>
                   <div className="col">
