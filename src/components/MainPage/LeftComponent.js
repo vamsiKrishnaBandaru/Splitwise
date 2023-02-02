@@ -10,9 +10,17 @@ class LeftComponent extends Component {
     }
   }
 
-  HandelClick = (status) => {
+  HandelClickOnGroup = (status) => {
     this.props.AddFormData({
-      currentPosition: status
+      activeGroup: status,
+      activeFriend: null
+    })
+  }
+
+  HandelClickOnFriends = (status) => {
+    this.props.AddFormData({
+      activeFriend: status,
+      activeGroup: null
     })
   }
 
@@ -76,7 +84,7 @@ class LeftComponent extends Component {
                 return (
                   <li key={group.groupName}>
                     <h6 onClick={() => {
-                      this.HandelClick(group.groupName)
+                      this.HandelClickOnGroup(group.groupName)
                     }}>
                       <i className="fa-solid fa-tag"></i>{group.groupName}</h6>
                   </li>
@@ -105,11 +113,14 @@ class LeftComponent extends Component {
 
               this.state.friends.map((friend) => {
                 return (
-                  <li key={friend} onClick={() => { this.HandelClick(friend) }}>
-                    <h6><i className="fa fa-user"></i>{friend}</h6>
+                  <li key={friend}>
+                    <h6 onClick={() => {
+                      this.HandelClickOnFriends(friend)
+                    }}><i className="fa fa-user"></i>{friend}</h6>
                   </li>
                 )
               })
+
               //  :
               // <div className='intial-sec-content'>
               //   <p>You have not added any friends yet.</p>

@@ -4,7 +4,7 @@
   border-right: 1px solid #ccc;
   box-shadow: 0 0 12px rgb(0 0 0 / 20%);
 }
-li {
+.sec-text-area li {
   list-style: none;
 }
 .main-box {
@@ -134,6 +134,21 @@ h3 {
   background: #4099ff;
 }
 
+/* friends active status */
+
+.group-name-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-sart;
+}
+.group-name-container img {
+  border-radius: 4rem;
+  width: 2.7rem;
+}
+.group-name-date {
+  display: flex;
+  gap: 1rem;
+}
 /* right-component */
 
 .right-contianer {

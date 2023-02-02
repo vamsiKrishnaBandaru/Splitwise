@@ -33,7 +33,7 @@ class Header extends Component {
                               name: "",
                               email: "",
                               isSignIn: false,
-                              currentPosition: null,
+                              activeGroup: null,
                            });
                         }}>
                            Log out</Link></li>

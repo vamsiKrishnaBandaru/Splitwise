@@ -13,9 +13,9 @@ class RightComponent extends Component {
     }
   }
 
-  updateData = (currentPosition) => {
+  updateData = (activeGroup) => {
     let result = this.props.groups.filter(group => {
-      if (group.groupName === currentPosition) {
+      if (group.groupName === activeGroup) {
         return group
       }
     })
@@ -28,12 +28,12 @@ class RightComponent extends Component {
   }
 
   componentDidMount() {
-    this.updateData(this.props.user.currentPosition)
+    this.updateData(this.props.user.activeGroup)
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.user.currentPosition != this.props.user.currentPosition) {
-      this.updateData(this.props.user.currentPosition)
+    if (prevProps.user.activeGroup != this.props.user.activeGroup) {
+      this.updateData(this.props.user.activeGroup)
     }
   }
 
@@ -64,7 +64,7 @@ class RightComponent extends Component {
                 )
               }, () => {
                 this.props.AddFormData({
-                  currentPosition: null
+                  activeGroup: null
                 })
               })
             }
@@ -103,8 +103,6 @@ class RightComponent extends Component {
   }
 }
 const mapStateToProps = (stateInStore) => {
-  // console.log(stateInStore.userData.user)
-  // console.log(stateInStore.DummyData.groups)
   return {
     groups: stateInStore.DummyData.groups,
     user: stateInStore.userData.user

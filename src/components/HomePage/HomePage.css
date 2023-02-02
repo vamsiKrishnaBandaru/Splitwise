@@ -4,10 +4,15 @@
 .heading {
   font-weight: 800;
 }
+.home-info li {
+  list-style: none;
+}
+
 .Home-pg-icons {
   display: flex;
   gap: 2rem;
 }
+
 .Home-pg-icons i {
   font-size: 3rem;
 }

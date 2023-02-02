@@ -3,6 +3,7 @@ import './MainPage.css'
 import { GROUP_DATA, SIGN_IN_USER_DATA } from '../../redux/actions/DataType'
 import { connect } from 'react-redux';
 import GroupActiveState from './GroupActiveState';
+import FriendActiveSatate from './FriendActiveSatate';
 
 
 class MiddleComponent extends Component {
@@ -69,31 +70,37 @@ class MiddleComponent extends Component {
             }
 
             {
-               !this.props.user.currentPosition
-                  ?
-                  <div className='row middle-bottom p-4'>
-                     <img src='https://assets.splitwise.com/assets/fat_rabbit/person-2d59b69b3e7431884ebec1a55de75a4153a17c4050e6b50051ca90412e72cf96.png'></img>
-                     <div className='col middle-bottom-text'>
-                        <h3>
-                           Welcome to Splitwise!
-                        </h3>
-                        <p>
-                           Splitwise helps you split bills with friends.
-                        </p>
-                        <p>
-                           Click “Add an expense” above to get started, or invite some friends first!
-                        </p>
-                        <div className='signup-btn'>
-                           <button type="submit">
-                              <i className="fa fa-plus"></i> <i className='fa fa-user user'></i>
-                              Add friends on Splitwise
-                           </button>
-                        </div>
+               (!this.props.user.activeGroup && !this.props.user.activeFriend)
+               &&
+               <div className='row middle-bottom p-4'>
+                  <img src='https://assets.splitwise.com/assets/fat_rabbit/person-2d59b69b3e7431884ebec1a55de75a4153a17c4050e6b50051ca90412e72cf96.png'></img>
+                  <div className='col middle-bottom-text'>
+                     <h3>
+                        Welcome to Splitwise!
+                     </h3>
+                     <p>
+                        Splitwise helps you split bills with friends.
+                     </p>
+                     <p>
+                        Click “Add an expense” above to get started, or invite some friends first!
+                     </p>
+                     <div className='signup-btn'>
+                        <button type="submit">
+                           <i className="fa fa-plus"></i> <i className='fa fa-user user'></i>
+                           Add friends on Splitwise
+                        </button>
                      </div>
                   </div>
-                  :
-                  <GroupActiveState />
+               </div>
             }
+            {
+               this.props.user.activeGroup && <GroupActiveState />
+            }
+
+            {
+               this.props.user.activeFriend && <FriendActiveSatate />
+            }
+
          </section >
       )
    }

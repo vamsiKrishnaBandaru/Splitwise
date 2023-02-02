@@ -11,9 +11,9 @@ class GroupActiveState extends Component {
          members: null,
       }
    }
-   updateData = (currentPosition) => {
+   updateData = (activeGroup) => {
       let result = this.props.groups.filter(group => {
-         if (group.groupName === currentPosition) {
+         if (group.groupName === activeGroup) {
             return group
          }
       })
@@ -26,11 +26,11 @@ class GroupActiveState extends Component {
       }
    }
    componentDidMount() {
-      this.updateData(this.props.user.currentPosition)
+      this.updateData(this.props.user.activeGroup)
    }
    componentDidUpdate(prevProps) {
-      if (prevProps.user.currentPosition != this.props.user.currentPosition) {
-         this.updateData(this.props.user.currentPosition)
+      if (prevProps.user.activeGroup != this.props.user.activeGroup) {
+         this.updateData(this.props.user.activeGroup)
       }
    }
 
