@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { SIGN_IN_USER_DATA } from '../../redux/actions/DataType';
+import { GROUP_DATA, SIGN_IN_USER_DATA } from '../../redux/actions/DataType'
 
 
 class RightComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      members: null
+      members: null,
+      totalAmount: null,
+      totalAmount: null
     }
   }
 
@@ -19,13 +21,16 @@ class RightComponent extends Component {
     })
     if (result.length > 0) {
       this.setState({
-        members: result[0].friends
+        members: result[0].friends,
+        totalAmount: result[0].totalAmount
       })
     }
   }
   componentDidMount() {
     // console.log(this.props.user.currentPosition, 'right component')
     this.updateData(this.props.user.currentPosition)
+
+    // console.log(totalAmount)
   }
   componentDidUpdate(prevProps) {
     if (prevProps.user.currentPosition != this.props.user.currentPosition) {
@@ -44,6 +49,7 @@ class RightComponent extends Component {
             {
               this.state.members !== null &&
               this.state.members.map((member, index) => {
+                let oweAmount = (this.state.totalAmount / (this.state.members.length)).toFixed(2)
                 let link = `https://s3.amazonaws.com/splitwise/uploads/user/default_avatars/avatar-grey${index + 1}-100px.png`
                 return (
                   <li className='right-part-member' key={member}>
@@ -53,7 +59,7 @@ class RightComponent extends Component {
                     <div className='member-data'>
                       <p>{member}</p>
                       <div className='text-danger'>
-                        <span>owes</span><span>{` $352.50`}</span></div>
+                        <span>owes</span><span>{` $${oweAmount}`}</span></div>
                     </div>
                   </li>
                 )
@@ -63,6 +69,16 @@ class RightComponent extends Component {
                 })
               })
             }
+            <li className='right-part-member'>
+              <div className='image'>
+                <img className="rounded-circle" src="https://s3.amazonaws.com/splitwise/uploads/user/default_avatars/avatar-ruby38-50px.png" />
+              </div>
+              <div className='member-data'>
+                <p>{this.props.user.name}</p>
+                <div className='text-success'>
+                  <span>gets back</span><span>{` $${(this.state.totalAmount - this.state.totalAmount / (this.state.members.length)).toFixed(2)}`}</span></div>
+              </div>
+            </li>
           </ul>
         </div>
       }

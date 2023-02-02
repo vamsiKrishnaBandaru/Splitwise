@@ -1,7 +1,25 @@
 import React, { Component } from 'react'
 import './MainPage.css'
+import { GROUP_DATA, SIGN_IN_USER_DATA } from '../../redux/actions/DataType'
+import { connect } from 'react-redux';
+
 
 class MiddleComponent extends Component {
+   constructor(props) {
+      super(props)
+      this.state = {
+         totalAmount: null
+      }
+   }
+   componentDidMount() {
+      let totalAmount = this.props.groups.reduce((acc, group) => {
+         acc += group.totalAmount
+         return acc
+      }, 0)
+      this.setState({
+         totalAmount
+      })
+   }
    render() {
       return (
          <section className='middle-component-container'>
@@ -25,19 +43,19 @@ class MiddleComponent extends Component {
                         <td scope="col">
                            <div className="flex-grow-1">
                               <p className="mb-1 font-weight-light">total balance</p>
-                              <p className="font-weight-light price">$450</p>
+                              <p className="font-weight-light price">{`$ ${this.state.totalAmount}`}</p>
                            </div>
                         </td>
                         <td scope="col">
                            <div className="flex-grow-1">
                               <p className="mb-1 font-weight-light">you owe</p>
-                              <p className="font-weight-light price">$250</p>
+                              <p className="font-weight-light price">$0</p>
                            </div>
                         </td>
                         <td scope="col">
                            <div className="flex-grow-1">
                               <p className="mb-1 font-weight-light">you are owed</p>
-                              <p className="font-weight-light price">$700</p>
+                              <p className="font-weight-light price">$7000</p>
                            </div>
                         </td>
                      </tr>
@@ -70,4 +88,24 @@ class MiddleComponent extends Component {
    }
 }
 
-export default MiddleComponent
+const mapStateToProps = (stateInStore) => {
+   // console.log(stateInStore.userData.user)
+   // console.log(stateInStore.DummyData.groups)
+   return {
+      groups: stateInStore.DummyData.groups,
+      user: stateInStore.userData.user
+   }
+}
+
+
+const mapDispatchToProps = {
+   AddFormData: (payload) => {
+      return {
+         type: SIGN_IN_USER_DATA,
+         payload,
+      }
+   }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(MiddleComponent);

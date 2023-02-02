@@ -275,7 +275,7 @@ h3 {
   width: 5.1rem;
 }
 .social-left img {
-  width: 1.4rem;
+  width: 1.5rem;
   margin-top: -0.1rem;
 }
 .Success-login-msg {
@@ -294,6 +294,9 @@ h3 {
 }
 .right-part-member img {
   width: 3rem;
+}
+.userImg img {
+  width: 10rem;
 }
 @media (max-width: 900px) {
   .middle-nav {
