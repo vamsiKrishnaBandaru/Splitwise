@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { GROUP_DATA, SIGN_IN_USER_DATA } from '../../redux/actions/DataType'
+import ListGroupCard from './ListGroupCard';
 
 class GroupActiveState extends Component {
    constructor(props) {
@@ -9,6 +10,7 @@ class GroupActiveState extends Component {
          howSpent: null,
          totalAmount: null,
          members: null,
+         listActive: null,
       }
    }
 
@@ -19,12 +21,11 @@ class GroupActiveState extends Component {
          }
       })
 
-      let totalAmount = result[0].howSpent.reduce((sum, amount) => {
-         sum += amount.cost
-         return sum
-      }, 0)
-      
       if (result.length > 0) {
+         let totalAmount = result[0].howSpent.reduce((sum, amount) => {
+            sum += amount.cost
+            return sum
+         }, 0)
          this.setState({
             howSpent: result[0].howSpent,
             totalAmount: totalAmount,
@@ -50,36 +51,13 @@ class GroupActiveState extends Component {
                this.state.howSpent &&
                <div className='container'>
                   <ul className='list-group mt-2 mx-2'>
-
                      {
                         this.state.howSpent.map(data => {
                            return (
-                              <li key={data.message} className="list-group-item message-container">
-
-                                 <div className='row message-date'>
-                                    <div className='col-2'>
-                                       <p>FEB</p>
-                                       <p>02</p>
-                                    </div>
-                                    <div className='col'>
-                                       <h6>{data.message}</h6>
-                                    </div>
-                                 </div>
-
-                                 <div className='spent-status'>
-                                    <div>
-                                       <p>You Paid</p>
-                                       <strong>${data.cost}</strong>
-                                    </div>
-                                    <div className='lent'>
-                                       <p>You lent</p>
-                                       <strong>{`$${(
-                                          data.cost -
-                                          (data.cost / (this.state.members.length + 1)).toFixed(2))
-                                          }`}</strong>
-                                    </div>
-                                 </div>
-
+                              <li key={data.message} className="list-group-item message-container" >
+                                 <ListGroupCard data={data}
+                                    members={this.state.members}
+                                    totalAmount={this.state.totalAmount} />
                               </li>
                            )
                         })
