@@ -17,7 +17,9 @@
   justify-content: space-between;
   padding: 1rem;
 }
-
+.flex-grow-1 {
+  color: rgb(149, 149, 149);
+}
 h3 {
   color: #333333;
   font-weight: 500;
@@ -102,6 +104,17 @@ h3 {
 .right-textContainer {
   background-color: #eeee;
   padding: 1rem;
+}
+.right-component-friend {
+  color: #5bc5a7;
+}
+.right-component-friend h6 {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+.right-component-friend strong {
+  font-size: 2rem;
+  font-weight: 600;
 }
 .right-textContainer p {
   color: rgb(84, 83, 83);

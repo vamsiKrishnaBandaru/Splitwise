@@ -18,10 +18,16 @@ class GroupActiveState extends Component {
             return group
          }
       })
+
+      let totalAmount = result[0].howSpent.reduce((sum, amount) => {
+         sum += amount.cost
+         return sum
+      }, 0)
+      
       if (result.length > 0) {
          this.setState({
             howSpent: result[0].howSpent,
-            totalAmount: result[0].totalAmount,
+            totalAmount: totalAmount,
             members: result[0].friends,
          })
       }
@@ -46,8 +52,6 @@ class GroupActiveState extends Component {
                   <ul className='list-group mt-2 mx-2'>
 
                      {
-                        this.state.howSpent
-                        &&
                         this.state.howSpent.map(data => {
                            return (
                               <li key={data.message} className="list-group-item message-container">

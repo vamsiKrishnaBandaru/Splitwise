@@ -6,19 +6,33 @@ class FriendActiveSatate extends Component {
    constructor(props) {
       super(props)
       this.state = {
-         mutualGroups: null
+         mutualGroups: null,
       }
    }
+
    updateData = (activeFriend) => {
+      let mutualGroups = null
       let result = this.props.groups.filter(group => {
          if (group.friends.includes(activeFriend)) {
             return group
          }
       })
+      if (result.length > 0) {
+         mutualGroups = result.reduce((acc, group) => {
+            let members = group.friends.length + 1
+            acc[group.groupName] = Number(
+               ((group.howSpent.reduce((sum, data) => {
+                  sum += data.cost
+                  return sum
+               }, 0)) / members).toFixed(2)
+            )
+            return acc
+         }, {})
+      }
 
       if (result.length > 0) {
          this.setState({
-            mutualGroups: result
+            mutualGroups: mutualGroups
          })
       }
    }
@@ -37,14 +51,15 @@ class FriendActiveSatate extends Component {
       return (
          <>
             {
-               this.state.mutualGroups &&
+               (this.state.mutualGroups && this.props.user.activeFriend) &&
                <div className='container'>
                   <ul className='list-group mt-2 mx-2'>
 
                      {
-                        this.state.mutualGroups.map((group) => {
+                        Object.entries(this.state.mutualGroups).map((group) => {
+
                            return (
-                              <li key={group.groupName} className="list-group-item message-container mt-1">
+                              <li key={group[0]} className="list-group-item message-container mt-1">
 
                                  <div className='message-date group-name-date'>
                                     <div>
@@ -54,14 +69,14 @@ class FriendActiveSatate extends Component {
                                     <div className='group-name-container'>
                                        <img src='https://secure.splitwise.com/assets/fat_rabbit/group-icon.png'>
                                        </img>
-                                       <h6>{group.groupName}</h6>
+                                       <h6>{group[0]}</h6>
                                     </div>
                                  </div>
 
                                  <div className='spent-status'>
                                     <div className='lent'>
                                        <p>{this.props.user.name} owes you</p>
-                                       <strong>$</strong>
+                                       <strong>${group[1]}</strong>
                                     </div>
                                  </div>
                               </li>

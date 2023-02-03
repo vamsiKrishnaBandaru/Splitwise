@@ -9,10 +9,9 @@ const initialState = {
             "Smith",
             "Bob",
          ],
-         totalAmount: 25000,
          howSpent: [
             {
-               message: 'At petrol bunk',
+               message: 'For petrol',
                cost: 5200
             },
             {
@@ -35,7 +34,6 @@ const initialState = {
             "Bob",
             "Smith"
          ],
-         totalAmount: 6500,
          howSpent: [
             {
                message: 'For Drinks',
@@ -59,7 +57,6 @@ const initialState = {
             "Smith",
             "Rahul"
          ],
-         totalAmount: 20000,
          howSpent: [
             {
                message: 'Driks',
@@ -84,7 +81,6 @@ const initialState = {
             "Bob",
             "Vinodh",
          ],
-         totalAmount: 26700,
          howSpent: [
             {
                message: 'Decoration',
@@ -106,7 +102,6 @@ const initialState = {
             "Jhon",
             "Bob",
          ],
-         totalAmount: 320,
          howSpent: [
             {
                message: 'vegetables',
@@ -118,15 +113,14 @@ const initialState = {
             }
          ]
       },
-      
+
       {
-         groupName: 'Avatar Movie',
+         groupName: 'Avatar Movie at PVR',
          friends: [
             "Pavan",
             "Bob",
             "Jhon",
          ],
-         totalAmount: 6700,
          howSpent: [
             {
                message: 'Tickets',

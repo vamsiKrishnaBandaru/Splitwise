@@ -15,10 +15,20 @@ class MiddleComponent extends Component {
    }
 
    componentDidMount() {
-      let totalAmount = this.props.groups.reduce((acc, group) => {
-         acc += group.totalAmount
-         return acc
-      }, 0)
+      let totalAmount = this.props.groups.map(group => {
+         return group.howSpent
+      })
+         .map(group => {
+            return group.reduce((sum, amount) => {
+               sum += amount.cost
+               return sum
+            }, 0)
+         })
+         .reduce((sum, amount) => {
+            sum += amount
+            return sum
+         })
+
       this.setState({
          totalAmount
       })
@@ -95,6 +105,7 @@ class MiddleComponent extends Component {
                   </div>
                </div>
             }
+            
             {
                this.props.user.activeGroup && <GroupActiveState />
             }
