@@ -33,7 +33,7 @@ class SignupForm extends Component {
 
          let errors = {}
 
-         if (name === "") {
+         if (name === "" || name.trim() === "") {
             errors.name = "First name can't be blank"
          }
 

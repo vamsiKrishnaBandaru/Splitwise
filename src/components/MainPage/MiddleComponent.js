@@ -40,7 +40,7 @@ class MiddleComponent extends Component {
 
             <div className="middle-nav">
                <div className='title-bar'>
-                  
+
                   {
                      !this.props.user.activeGroup &&
                      !this.props.user.activeFriend &&
@@ -95,7 +95,7 @@ class MiddleComponent extends Component {
                            <div className="flex-grow-1">
                               <p className="mb-1 font-weight-light">total balance</p>
                               <p className="font-weight-light price">{
-                                 `$ ${this.state.totalAmount}`
+                                 `$${this.state.totalAmount}`
                               }</p>
                            </div>
                         </td>

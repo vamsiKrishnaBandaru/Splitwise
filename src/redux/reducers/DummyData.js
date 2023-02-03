@@ -29,6 +29,9 @@ const initialState = {
          paid: [
             {
                Smith: 6250,
+            },
+            {
+               Bob: 6250,
             }
          ]
       },
@@ -52,11 +55,7 @@ const initialState = {
                cost: 9800
             }
          ],
-         paid: [
-            {
-               Smith: 7266.67,
-            }
-         ]
+         paid: []
       },
 
       {
@@ -141,9 +140,11 @@ const initialState = {
                cost: 20
             }
          ],
-         pain: [
+         paid: [
             {
                Jhon: 106.67,
+            },
+            {
                Bob: 106.67,
             }
          ]
@@ -166,9 +167,9 @@ const initialState = {
                cost: 1500
             }
          ],
-         pain: [
+         paid: [
             {
-               Bob: 1675,
+               Bob: 1675
             }
          ]
       },

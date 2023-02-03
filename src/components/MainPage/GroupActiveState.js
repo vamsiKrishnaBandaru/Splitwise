@@ -11,6 +11,7 @@ class GroupActiveState extends Component {
          totalAmount: null,
          members: null,
          listActive: null,
+         paidStatus: null,
       }
    }
 
@@ -20,7 +21,6 @@ class GroupActiveState extends Component {
             return group
          }
       })
-
       if (result.length > 0) {
          let totalAmount = result[0].howSpent.reduce((sum, amount) => {
             sum += amount.cost
@@ -30,6 +30,7 @@ class GroupActiveState extends Component {
             howSpent: result[0].howSpent,
             totalAmount: totalAmount,
             members: result[0].friends,
+            paidStatus: result[0].paid
          })
       }
    }
@@ -57,7 +58,8 @@ class GroupActiveState extends Component {
                               <li key={data.message} className="list-group-item message-container" >
                                  <ListGroupCard data={data}
                                     members={this.state.members}
-                                    totalAmount={this.state.totalAmount} />
+                                    totalAmount={this.state.totalAmount}
+                                    paidStatus={this.state.paidStatus} />
                               </li>
                            )
                         })
