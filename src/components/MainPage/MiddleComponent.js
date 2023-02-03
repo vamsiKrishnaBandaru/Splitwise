@@ -39,9 +39,44 @@ class MiddleComponent extends Component {
          <section className='middle-component-container'>
 
             <div className="middle-nav">
-               <h3>
-                  DashBoard
-               </h3>
+               <div className='title-bar'>
+                  
+                  {
+                     !this.props.user.activeGroup &&
+                     !this.props.user.activeFriend &&
+                     <>
+                        <img src='https://s3.amazonaws.com/splitwise/uploads/group/default_avatars/avatar-ruby33-house-50px.png'></img>
+                        <span>
+                           <h3> DashBoard</h3>
+                        </span>
+                     </>
+                  }
+
+                  {
+                     this.props.user.activeGroup &&
+                     <>
+                        <img src='https://s3.amazonaws.com/splitwise/uploads/group/default_avatars/avatar-ruby33-house-50px.png'></img>
+                        <span>
+                           <h3>
+                              {this.props.user.activeGroup}
+                           </h3>
+                        </span>
+                     </>
+                  }
+
+                  {
+                     this.props.user.activeFriend &&
+                     <div className='frnd-title-img'>
+                        <img src='https://s3.amazonaws.com/splitwise/uploads/user/default_avatars/avatar-grey4-100px.png'></img>
+                        <span>
+                           <h3>
+                              {this.props.user.activeFriend}
+                           </h3>
+                        </span>
+                     </div>
+                  }
+               </div>
+
                <div className='top-btns'>
                   <div className='signup-btn'>
                      <button type="submit">Add an expense</button>
@@ -105,7 +140,7 @@ class MiddleComponent extends Component {
                   </div>
                </div>
             }
-            
+
             {
                this.props.user.activeGroup && <GroupActiveState />
             }

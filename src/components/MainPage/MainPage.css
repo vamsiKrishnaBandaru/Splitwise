@@ -63,6 +63,30 @@ h3 {
 .settle-up button:hover {
   background: #5bc5a7;
 }
+.title-bar,
+.frnd-title-img {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.frnd-title-img {
+  gap: 1rem;
+}
+.title-bar img {
+  margin-left: 1rem;
+}
+.title-bar h3 {
+  font-weight: 500;
+}
+
+.frnd-title-img img {
+  width: 3rem;
+}
+
+.title-bar img {
+  border-radius: 5rem;
+}
 .middle-bottom {
   display: flex;
   justify-content: space-between;
