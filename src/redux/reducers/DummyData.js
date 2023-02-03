@@ -11,8 +11,8 @@ const initialState = {
          ],
          howSpent: [
             {
-               message: 'For petrol',
-               cost: 5200
+               message: 'Hotel',
+               cost: 9800
             },
             {
                message: 'Food',
@@ -22,8 +22,13 @@ const initialState = {
                message: 'Drinks',
                cost: 6500
             }, {
-               message: 'Hotel',
-               cost: 9800
+               message: 'For Petrol',
+               cost: 5200
+            }
+         ],
+         paid: [
+            {
+               Smith: 6250,
             }
          ]
       },
@@ -45,6 +50,11 @@ const initialState = {
             }, {
                message: 'Hotel',
                cost: 9800
+            }
+         ],
+         paid: [
+            {
+               Smith: 7266.67,
             }
          ]
       },
@@ -70,6 +80,20 @@ const initialState = {
                message: 'For Cake',
                cost: 800
             }
+         ],
+         paid: [
+            {
+               Rahul: 4000,
+            },
+            {
+               Bob: 4000,
+            },
+            {
+               Jhon: 4000,
+            },
+            {
+               Smith: 4000,
+            }
          ]
       },
       {
@@ -92,7 +116,12 @@ const initialState = {
             },
             {
                message: 'Drinks',
-               cost: 20000
+               cost: 15000
+            }
+         ],
+         paid: [
+            {
+               Pavan: 3616.67
             }
          ]
       },
@@ -110,6 +139,12 @@ const initialState = {
             {
                message: 'Water Tin',
                cost: 20
+            }
+         ],
+         pain: [
+            {
+               Jhon: 106.67,
+               Bob: 106.67,
             }
          ]
       },
@@ -129,6 +164,11 @@ const initialState = {
             {
                message: 'Food',
                cost: 1500
+            }
+         ],
+         pain: [
+            {
+               Bob: 1675,
             }
          ]
       },

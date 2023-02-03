@@ -29,12 +29,13 @@ class ListGroupCard extends Component {
                this.addClassName()
             }}>
                <div className='row message-date'>
-                  <div className='col-2'>
+                  <div className='col-2 mt-2'>
                      <p>FEB</p>
                      <p>02</p>
                   </div>
-                  <div className='col'>
-                     <h6>{this.props.data.message}</h6>
+                  <div className='col msg-container'>
+                     <img src='https://s3.amazonaws.com/splitwise/uploads/category/icon/square_v2/uncategorized/general@2x.png'></img><span> {this.props.data.message}
+                     </span>
                   </div>
                </div>
 
