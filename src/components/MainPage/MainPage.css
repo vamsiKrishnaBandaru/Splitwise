@@ -222,9 +222,11 @@ button:hover {
 .paid-person-container {
   font-size: 1.2rem;
 }
+
 .paid-list {
   background: #f1f1f1;
   margin: 0 -1rem;
+  margin-bottom: -0.63rem;
 }
 
 .paid-list li {

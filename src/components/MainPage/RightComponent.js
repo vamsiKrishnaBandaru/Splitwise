@@ -23,6 +23,7 @@ class RightComponent extends Component {
         return group
       }
     })
+    console.log(result)
     if (result.length > 0) {
       totalAmount = result.map(group => {
         totalMembers += group.friends.length + 1
@@ -49,18 +50,23 @@ class RightComponent extends Component {
   }
 
   updateGroup = (activeGroup) => {
-    let totalAmount = null;
+    let totalAmount;
+    let paidMembers;
     let result = this.props.groups.filter(group => {
       if (group.groupName === activeGroup) {
         return group
       }
     })
-
     if (result.length > 0) {
       totalAmount = result[0].howSpent.reduce((sum, amount) => {
         sum += amount.cost
         return sum
       }, 0)
+      paidMembers = result[0].paid.reduce((acc, member) => {
+        let person = Object.entries(member)
+        acc.push(person[0][0])
+        return acc
+      }, [])
     }
 
     if (result.length > 0) {
@@ -68,6 +74,7 @@ class RightComponent extends Component {
         howSpent: result[0].howSpent,
         totalAmount: totalAmount,
         members: result[0].friends,
+        paidMembers
       })
     }
   }
@@ -91,6 +98,7 @@ class RightComponent extends Component {
   }
 
   render() {
+    let share;
     return (
       <>
         {
@@ -104,7 +112,7 @@ class RightComponent extends Component {
                 this.state.members !== null &&
                 this.state.members.map((member, index) => {
 
-                  let oweAmount = (this.state.totalAmount / (this.state.members.length + 1)).toFixed(2)
+                  share = (this.state.totalAmount / (this.state.members.length + 1)).toFixed(2)
                   let link = `https://s3.amazonaws.com/splitwise/uploads/user/default_avatars/avatar-grey${index + 1}-100px.png`
 
                   return (
@@ -115,7 +123,21 @@ class RightComponent extends Component {
                       <div className='member-data'>
                         <p>{member}</p>
                         <div className='text-danger'>
-                          <span>owes</span><span>{` $${oweAmount}`}</span></div>
+                          <span>owes</span>
+                          {
+                            this.state.paidMembers
+                              &&
+                              !this.state.paidMembers.find(person => {
+                                if (person == member) {
+                                  return true;
+                                } else {
+                                  return false;
+                                }
+                              }) ?
+                              <span className='h5'> ${share}</span>
+                              : <span className='h5'> $0.00</span>
+                          }
+                        </div>
                       </div>
                     </li>
                   )
@@ -135,9 +157,7 @@ class RightComponent extends Component {
                   <div className='text-success'>
                     gets back
                     {
-                      ` $${(
-                        (this.state.totalAmount / (this.state.members.length + 1)).toFixed(2)
-                      ) * this.state.members.length}`
+                      ` $${share * ((this.state.members.length) - this.state.paidMembers.length)}`
                     }
                   </div>
                 </div>

@@ -151,7 +151,7 @@ class ListGroupCard extends Component {
                         <div className='row p-2'>
                            <h6 className='col-4'>February</h6>
                            <div className='February month-status col-4'> </div>
-                           <h6 className='col-4'>$0.00</h6>
+                           <h6 className='col-4'>${this.props.data.cost.toFixed(2)}</h6>
                         </div>
                      </div>
                      <p className='text-primary'>View more charts</p>
