@@ -154,18 +154,13 @@ class AddAnExpense extends Component {
                                     </div>
                                  </div>
                                  <div className='bottom-btns'>
-                                    <div className='signup-btn mt-2 Add-btn'>
+                                    <div className='signup-btn Add-btn'>
                                        <button type="submit">Add</button>
                                     </div>
                                  </div>
                                  {
                                     this.state.signUpStatus && this.state.ifFilled &&
                                     <div className="Success-login-msg">
-                                       <div className="d-flex align-items-center justify-content-center">
-                                          <div className="alert alert-success px-5 w-50" role="alert">
-                                             Your update was successful !
-                                          </div>
-                                       </div>
                                        <Link to="/mainpage">
                                           <button type="button" className="btn btn-success mt-4">
                                              Go to DashBoard <i className="fa-solid fa-arrow-right"></i></button>

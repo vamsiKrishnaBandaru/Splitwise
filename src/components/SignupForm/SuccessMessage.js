@@ -9,7 +9,7 @@ function SuccessLoginMessage() {
             </div>
          </div>
          <Link to="/mainpage">
-            <button type="button" className="btn btn-success mt-4">
+            <button type="button" className="btn btn-success">
                Go to DashBoard <i className="fa-solid fa-arrow-right"></i></button>
          </Link>
       </div>
