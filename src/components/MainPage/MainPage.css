@@ -254,12 +254,25 @@ button:hover {
   width: 100%;
   text-align: left;
 }
+
+.price-input input[type="text"] {
+  padding: 0.5rem 1rem;
+  font-size: 3rem;
+}
+.price-input input::placeholder {
+  color: #888;
+}
+
 .posts li {
   background-color: #fff;
   border: 1.5px solid #d8d8d8;
   border-radius: 0.6rem;
   padding: 0.5rem 0.6rem;
   box-shadow: 2px 2px 2px #888888;
+}
+
+.Add-btn button {
+  padding: 0.3rem 0.7rem;
 }
 
 .close:hover {
@@ -270,6 +283,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
 }
+
 /* .right-component */
 
 .right-component h5 {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { GROUP_DATA, SIGN_IN_USER_DATA, UPDATE_COMMENT } from '../../redux/actions/DataType'
-
+import { v4 as uuidv4 } from "uuid"
 class ListGroupCard extends Component {
    constructor(props) {
       super(props)
@@ -189,7 +189,9 @@ class ListGroupCard extends Component {
                      <p className='text-primary'>View more charts</p>
                      <p><i className="fa fa-comment my-2"></i> NOTES AND COMMENTS</p>
 
-                     <form onClick={(event) => { this.Handelform(event) }}>
+                     <form onClick={(event) => {
+                        this.Handelform(event)
+                     }}>
                         <div className='form-group'>
                            <textarea placeholder="Add a comment"
                               cols="40"

@@ -4,6 +4,8 @@ import { GROUP_DATA, SIGN_IN_USER_DATA } from '../../redux/actions/DataType'
 import { connect } from 'react-redux';
 import GroupActiveState from './GroupActiveState';
 import FriendActiveSatate from './FriendActiveSatate';
+import AddAnExpense from './AddAnExpense';
+import { Link } from 'react-router-dom';
 
 
 class MiddleComponent extends Component {
@@ -75,11 +77,14 @@ class MiddleComponent extends Component {
                         </span>
                      </div>
                   }
+
                </div>
 
                <div className='top-btns'>
                   <div className='signup-btn'>
+                     <Link to="/addexpense">
                      <button type="submit">Add an expense</button>
+                     </Link>
                   </div>
                   <div className='signup-btn settle-up'>
                      <button type="submit">Settle Up</button>

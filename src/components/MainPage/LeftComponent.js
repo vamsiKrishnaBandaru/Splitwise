@@ -84,7 +84,7 @@ class LeftComponent extends Component {
               // this.props.user.isSignIn ?
               this.props.groups.map((group) => {
                 return (
-                  <li key={group.groupName}>
+                  <li key={group.id}>
                     <h6 onClick={() => {
                       this.HandelClickOnGroup(group.groupName)
                     }}>
@@ -147,7 +147,7 @@ class LeftComponent extends Component {
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>

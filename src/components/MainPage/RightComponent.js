@@ -87,11 +87,13 @@ class RightComponent extends Component {
   }
 
   componentDidUpdate(prevProps) {
+
     if (this.props.user.activeFriend) {
       if (prevProps.user.activeFriend != this.props.user.activeFriend) {
         this.updateFriend(this.props.user.activeFriend)
       }
     }
+
     if (this.props.user.activeGroup) {
       if (prevProps.user.activeGroup != this.props.user.activeGroup) {
         this.updateGroup(this.props.user.activeGroup)

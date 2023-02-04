@@ -1,8 +1,9 @@
-import { GROUP_DATA, UPDATE_COMMENT } from "../actions/DataType";
+import { GROUP_DATA, UPDATE_COMMENT, UPDATE_MESSAGE } from "../actions/DataType";
 
 const initialState = {
    groups: [
       {
+         id: 1,
          groupName: 'Bangalore Trip',
          friends: [
             "Jhon",
@@ -41,6 +42,7 @@ const initialState = {
       },
 
       {
+         id: 2,
          groupName: 'Saturday Night',
          friends: [
             "Bob",
@@ -66,6 +68,7 @@ const initialState = {
       },
 
       {
+         id: 3,
          groupName: 'New Year Party',
          friends: [
             "Bob",
@@ -106,6 +109,7 @@ const initialState = {
          ]
       },
       {
+         id: 4,
          groupName: 'Vinodh Birthday Party',
          friends: [
             "Jhon",
@@ -138,6 +142,7 @@ const initialState = {
          ]
       },
       {
+         id: 5,
          groupName: 'Room expenses',
          friends: [
             "Jhon",
@@ -166,6 +171,7 @@ const initialState = {
       },
 
       {
+         id: 6,
          groupName: 'Avatar Movie at PVR',
          friends: [
             "Pavan",
@@ -193,9 +199,7 @@ const initialState = {
    ]
 }
 
-
 const DummyData = (state = initialState, action) => {
-   // console.log(action, "action")
    switch (action.type) {
       case GROUP_DATA:
          return {
@@ -205,11 +209,18 @@ const DummyData = (state = initialState, action) => {
                ...action.payload
             }
          };
-      // case UPDATE_COMMENT: {
-      //    return {
-      //       ...state,
-      //    }
-      // }
+      case UPDATE_MESSAGE: {
+         const {
+            groupName, update
+         } = action.payload
+         return {
+            ...state,
+            groups: [
+               ...state.groups,
+               update
+            ]
+         }
+      }
       default:
          return state;
    }
