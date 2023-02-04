@@ -1,4 +1,4 @@
-import { GROUP_DATA } from "../actions/DataType";
+import { GROUP_DATA, UPDATE_COMMENT } from "../actions/DataType";
 
 const initialState = {
    groups: [
@@ -12,18 +12,22 @@ const initialState = {
          howSpent: [
             {
                message: 'Hotel',
-               cost: 9800
+               cost: 9800,
+               comments: []
             },
             {
                message: 'Food',
-               cost: 3500
+               cost: 3500,
+               comments: []
             },
             {
                message: 'Drinks',
-               cost: 6500
+               cost: 6500,
+               comments: []
             }, {
                message: 'For Petrol',
-               cost: 5200
+               cost: 5200,
+               comments: []
             }
          ],
          paid: [
@@ -45,14 +49,17 @@ const initialState = {
          howSpent: [
             {
                message: 'For Drinks',
-               cost: 8500
+               cost: 8500,
+               comments: []
             },
             {
                message: 'For Food',
-               cost: 3500
+               cost: 3500,
+               comments: []
             }, {
                message: 'Hotel',
-               cost: 9800
+               cost: 9800,
+               comments: []
             }
          ],
          paid: []
@@ -69,15 +76,18 @@ const initialState = {
          howSpent: [
             {
                message: 'Driks',
-               cost: 14200
+               cost: 14200,
+               comments: []
             },
             {
                message: 'Food',
-               cost: 5000
+               cost: 5000,
+               comments: []
             },
             {
                message: 'For Cake',
-               cost: 800
+               cost: 800,
+               comments: []
             }
          ],
          paid: [
@@ -107,15 +117,18 @@ const initialState = {
          howSpent: [
             {
                message: 'Decoration',
-               cost: 5200
+               cost: 5200,
+               comments: []
             },
             {
                message: 'For Cake',
-               cost: 1500
+               cost: 1500,
+               comments: []
             },
             {
                message: 'Drinks',
-               cost: 15000
+               cost: 15000,
+               comments: []
             }
          ],
          paid: [
@@ -133,11 +146,13 @@ const initialState = {
          howSpent: [
             {
                message: 'vegetables',
-               cost: 300
+               cost: 300,
+               comments: []
             },
             {
                message: 'Water Tin',
-               cost: 20
+               cost: 20,
+               comments: []
             }
          ],
          paid: [
@@ -160,11 +175,13 @@ const initialState = {
          howSpent: [
             {
                message: 'Tickets',
-               cost: 5200
+               cost: 5200,
+               comments: []
             },
             {
                message: 'Food',
-               cost: 1500
+               cost: 1500,
+               comments: []
             }
          ],
          paid: [
@@ -178,6 +195,7 @@ const initialState = {
 
 
 const DummyData = (state = initialState, action) => {
+   // console.log(action, "action")
    switch (action.type) {
       case GROUP_DATA:
          return {
@@ -187,6 +205,11 @@ const DummyData = (state = initialState, action) => {
                ...action.payload
             }
          };
+      // case UPDATE_COMMENT: {
+      //    return {
+      //       ...state,
+      //    }
+      // }
       default:
          return state;
    }

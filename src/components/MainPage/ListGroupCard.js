@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { GROUP_DATA, SIGN_IN_USER_DATA } from '../../redux/actions/DataType'
+import { GROUP_DATA, SIGN_IN_USER_DATA, UPDATE_COMMENT } from '../../redux/actions/DataType'
 
 class ListGroupCard extends Component {
    constructor(props) {
       super(props)
       this.state = {
          listActive: false,
-         paidMembers: false
+         paidMembers: false,
+         value: "",
+         textarea: [],
       }
    }
-
+   deleteComment = () => {
+      this.setState({
+         textarea: []
+      })
+   }
    addClassName = () => {
       if (this.state.listActive) {
          this.setState({
@@ -22,9 +28,26 @@ class ListGroupCard extends Component {
          })
       }
    }
+
+   handelChange = (event) => {
+      if (this.props.user.activeGroup) {
+         let value = event.target.value
+         if (value !== "" && value !== null && value.trim() !== "") {
+            this.setState({
+               value: event.target.value
+            })
+         }
+      }
+   }
+
    Handelform = (event) => {
       event.preventDefault()
-      console.log(event.target.value)
+      if (this.state.textarea !== null) {
+         this.setState({
+            textarea: this.state.value,
+            value: ""
+         })
+      }
    }
 
    paidMembers = () => {
@@ -38,10 +61,19 @@ class ListGroupCard extends Component {
             paidMembers: result
          })
       }
-
    }
    componentDidMount() {
       this.paidMembers()
+   }
+   componentDidUpdate(prevProps) {
+      if (this.props.user.activeGroup) {
+         if (prevProps.user.activeGroup != this.props.user.activeGroup) {
+            this.setState({
+               textarea: "",
+               value: ""
+            })
+         }
+      }
    }
 
    render() {
@@ -156,14 +188,35 @@ class ListGroupCard extends Component {
                      </div>
                      <p className='text-primary'>View more charts</p>
                      <p><i className="fa fa-comment my-2"></i> NOTES AND COMMENTS</p>
+
                      <form onClick={(event) => { this.Handelform(event) }}>
                         <div className='form-group'>
-                           <textarea placeholder="Add a comment" cols="40" rows="2"></textarea>
+                           <textarea placeholder="Add a comment"
+                              cols="40"
+                              rows="2"
+                              onChange={(event) => {
+                                 this.handelChange(event)
+                              }}
+                              value={this.state.value}
+                           >
+                           </textarea>
                         </div>
                         <div className='signup-btn top-btns list-btn post-btn'>
                            <button className='submit'>post</button>
                         </div>
                      </form>
+
+                     {
+                        this.state.textarea.length > 1 &&
+                        <ul className='posts mt-4'>
+                           <li className='comment-box'>
+                              <div>{this.state.textarea}</div><div className='close' onClick={() => {
+                                 this.deleteComment()
+                              }}>x</div>
+                           </li>
+                        </ul>
+                     }
+
                   </div>
                </div>
                <ul className='paid-list'>
@@ -199,9 +252,9 @@ const mapStateToProps = (stateInStore) => {
 }
 
 const mapDispatchToProps = {
-   AddFormData: (payload) => {
+   AddToGroup: (payload) => {
       return {
-         type: SIGN_IN_USER_DATA,
+         type: UPDATE_COMMENT,
          payload,
       }
    }

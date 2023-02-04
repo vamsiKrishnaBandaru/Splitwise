@@ -23,7 +23,6 @@ class RightComponent extends Component {
         return group
       }
     })
-    console.log(result)
     if (result.length > 0) {
       totalAmount = result.map(group => {
         totalMembers += group.friends.length + 1
@@ -52,16 +51,19 @@ class RightComponent extends Component {
   updateGroup = (activeGroup) => {
     let totalAmount;
     let paidMembers;
+
     let result = this.props.groups.filter(group => {
       if (group.groupName === activeGroup) {
         return group
       }
     })
+
     if (result.length > 0) {
       totalAmount = result[0].howSpent.reduce((sum, amount) => {
         sum += amount.cost
         return sum
       }, 0)
+
       paidMembers = result[0].paid.reduce((acc, member) => {
         let person = Object.entries(member)
         acc.push(person[0][0])

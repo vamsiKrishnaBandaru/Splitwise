@@ -247,6 +247,29 @@ button:hover {
   width: 2.3rem;
 }
 
+.posts {
+  clear: both;
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
+  text-align: left;
+}
+.posts li {
+  background-color: #fff;
+  border: 1.5px solid #d8d8d8;
+  border-radius: 0.6rem;
+  padding: 0.5rem 0.6rem;
+  box-shadow: 2px 2px 2px #888888;
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+.comment-box {
+  display: flex;
+  justify-content: space-between;
+}
 /* .right-component */
 
 .right-component h5 {
