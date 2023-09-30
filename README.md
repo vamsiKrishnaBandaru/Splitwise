@@ -1,3 +1,25 @@
+# Split wise
+I created a Splitwise app clone, streamlining shared expenses and simplifying financial management for users.
+https://splitwise-git-master-vamsimb.vercel.app/
+
+
+
+![landing-page](https://github.com/vamsiKrishnaBandaru/Splitwise/assets/76834507/791b6351-fed3-4305-8cd5-41db2c1aab84)
+
+![sign-up](https://github.com/vamsiKrishnaBandaru/Splitwise/assets/76834507/cc8babb0-f9ab-4f45-be05-ea6673d70567)
+
+![home-page](https://github.com/vamsiKrishnaBandaru/Splitwise/assets/76834507/d5ce5bfd-aac7-4b4a-8ecf-784c823817d7)
+
+![groups](https://github.com/vamsiKrishnaBandaru/Splitwise/assets/76834507/adf070e3-767a-4833-a3a2-8ae1568f8587)
+
+![splits](https://github.com/vamsiKrishnaBandaru/Splitwise/assets/76834507/bf01650f-bcee-4a65-b929-9418c63fa828)
+
+![analysis](https://github.com/vamsiKrishnaBandaru/Splitwise/assets/76834507/e0f8c87a-ba67-4b6c-b87c-f306461b4173)
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
